@@ -4,6 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  background: #F6F7F9;
+}
 
 /* Global Page Layout */
 .page-layout {

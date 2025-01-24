@@ -1,0 +1,184 @@
+/* ------------------------------------------------------------
+   COLOR VARIABLES (optional)
+   ------------------------------------------------------------ */
+   :root {
+    --Primary-0: #FFFFFF;
+    --Primary-500: #3563E9;
+    --Secondary-300: #90A3BF;
+    --Secondary-400: #596780;
+  }
+  
+  /* ------------------------------------------------------------
+     MAIN SIDEBAR CONTAINER
+     ------------------------------------------------------------ */
+  .navbar-side {
+    display: inline-flex;
+    /* The padding indicates: top=32px, right=32px, bottom=816px, left=32px */
+    padding: 32px 32px 816px 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 56px;
+    border-right: 1px solid #F3F5F7;
+    background: var(--Primary-0, #FFF);
+    /* You can adjust width if needed */
+  }
+  
+  /* ------------------------------------------------------------
+     GENERIC SECTION WRAPPER
+     ------------------------------------------------------------ */
+  .navbar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+  }
+  
+  /* ------------------------------------------------------------
+     SECTION TITLE (e.g., "T Y P E", "C A P A C I T Y", etc.)
+     ------------------------------------------------------------ */
+  .navbar-section-title {
+    display: flex;
+    width: 104px;
+    height: 20px;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--Secondary-300, #90A3BF);
+  
+    /* Typography: Semibold/Type@12 */
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.24px;
+    text-transform: uppercase; /* optional if you want "T Y P E" style */
+  }
+  
+  /* ------------------------------------------------------------
+     LIST OF ITEMS UNDER EACH SECTION
+     ------------------------------------------------------------ */
+  .navbar-item-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+  
+  /* Single item row (icon + text) */
+  .navbar-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  /* Icon container (24x24), used for tick-square or check icons */
+  .navbar-item-icon {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  
+  /* The text label for each item, e.g., "Sport (10)" */
+  .navbar-item-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* By default, let's set it to the secondary-400 color (#596780).
+       If you want it in secondary-300 (#90A3BF), adjust or apply a modifier class */
+    color: var(--Secondary-400, #596780);
+    text-align: justify;
+  
+    /* Semibold/Type@20 */
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 150%; /* ~30px */
+    letter-spacing: -0.4px;
+  }
+  
+  /* ------------------------------------------------------------
+     CAPACITY SECTION
+     (Same pattern as TYPE, just separate for clarity if needed)
+     ------------------------------------------------------------ */
+  /* .navbar-capacity-section {
+     (inherits from .navbar-section)
+  } */
+  
+  /* ------------------------------------------------------------
+     PRICE SECTION
+     ------------------------------------------------------------ */
+  /* .navbar-price-section {
+     (inherits from .navbar-section)
+  } */
+  
+  .navbar-price-range {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  /* The horizontal track lines (gray and blue) */
+  .navbar-price-line-container {
+    position: relative; /* so we can overlay lines if needed */
+    width: 296px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-price-line-bg {
+    /* "line2": the gray background line */
+    width: 296px;
+    height: 12px;
+    border-radius: 12px;
+    background: var(--Secondary-300, #90A3BF);
+    flex-shrink: 0;
+    position: absolute;
+    top: 0; left: 0;
+  }
+  
+  .navbar-price-line-fill {
+    /* "line1": the blue fill portion */
+    width: 220px; /* example fill width */
+    height: 12px;
+    border-radius: 12px;
+    background: var(--Primary-500, #3563E9);
+    flex-shrink: 0;
+    position: relative; /* remain in the container, on top of the BG */
+    z-index: 1;
+  }
+  
+  .navbar-price-mark {
+    /* The circular "handle" of the slider */
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  
+    /* We'll absolutely position it at the end of the fill line,
+       or you can wrap it in a separate container, depending on
+       how you want to handle the slider logic. For example: */
+    position: absolute;
+    left: 210px; /* near the end of the fill */
+    z-index: 2;
+  }
+  
+  /* The text "Max. $100.00" or similar */
+  .navbar-price-value {
+    display: flex;
+    width: 296px;
+    height: 24px;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--Secondary-400, #596780);
+  
+    /* Semibold/Type@20 */
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 150%; /* ~30px */
+    letter-spacing: -0.4px;
+  }
+  
