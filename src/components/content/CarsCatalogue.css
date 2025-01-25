@@ -1,0 +1,363 @@
+/* 
+  From the previous step, we already defined color variables
+  and the main container. 
+  We'll just add new classes for the two text elements here.
+*/
+
+:root {
+  /* Primary/0 */
+  --Primary-0: #FFFFFF;
+  /* Primary/500 */
+  --Primary-500: #3563E9;
+  /* Secondary/300 */
+  --Secondary-300: #90A3BF;
+  /* Secondary/500 */
+  --Secondary-500: #1A202C;
+  /* White transparent & white */
+  --White-Transparent: #FFFFFF00; /* 0% */
+  --White: #FFFFFF;               /* 100% */
+  /* Additional color e.g. #ED3F3F */
+  --Error: #ED3F3F;
+}
+
+/* The main container */
+.cars-catalogue {
+  width: 1440px;
+  height: 1600px;
+  flex-shrink: 0;
+  background: #f6f7f9;
+   
+}
+
+/* Wrapper for the two text items */
+.catalogue-header {
+  display: flex;
+  align-items: center;
+  gap: 2px; /* space between "Cars Catalogue" and "86 Cars" */
+}
+
+/* “Cars Catalogue” text */
+.catalogue-title {
+  display: flex;
+  width: 170px;
+  height: 24px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 28px;
+  margin-left: 32px;
+  color: var(--Secondary-500, #1A202C);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 30px */
+  letter-spacing: -0.6px;
+}
+
+/* “86 Cars” text */
+.catalogue-count {
+  display: flex;
+  width: 61px;
+  height: 24px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 30px;
+  color: var(--Secondary-300, #90A3BF);
+  text-align: center;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 21px */
+  letter-spacing: -0.28px;
+}
+/* Layout for Catalog 1 */
+.catalog-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  background: var(--Primary-0, #FFFFFF);
+  border-radius: 10px;
+  width: 317px;
+  height: 388px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  flex-direction: column; /* Ensure vertical layout inside the card */
+  position: relative; /* Set relative positioning for absolute adjustments */
+  margin-top: 28px; /* 80px from the top */
+  margin-left: 32px; /* 32px from the left */
+  
+}
+/* Car Name Container */
+.car-name {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin-left: 24px; /* 24px from the left */
+  margin-top: 24px;
+  
+}
+
+/* First Text (e.g., "Koenigsegg") */
+.car-name-title {
+  display: flex;
+  width: 128px;
+  height: 24px;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--Secondary-500, #1A202C);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 30px */
+  letter-spacing: -0.6px;
+}
+
+/* Second Text (e.g., "Sport") */
+.car-name-type {
+  display: flex;
+  width: 128px;
+  height: 20px;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--Secondary-300, #90A3BF);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 21px */
+  letter-spacing: -0.28px;
+}
+/* Vuesax Container */
+.vuesax {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  position: absolute; /* To position it relative to the card */
+  top: 24px; /* 24px from the top */
+  right: 24px; /* 24px from the right */
+}
+
+/* Heart SVG */
+.vuesax-heart {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+/* Car Image Container */
+.car-image {
+  width: 272px; /* Match Figma width */
+  height: 84px; /* Match Figma height */
+  flex-shrink: 0; /* Prevent shrinking */
+  background: url("/public/assets/Car1.jpg") lightgray -19.147px -40.552px / 109.391% 172.414% no-repeat; /* Match Figma background */
+  position: absolute; /* Position it relative to the parent */
+  top: 124px; /* 124px from the top */
+  left: 22px; /* 22px from the left */
+  background-position: center;
+  background-size: cover;
+  
+}
+
+/* Shadow Element */
+.shadow {
+  width: 264px;
+  height: 66px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFF 100%);
+  position: absolute; /* Position it relative to the parent */
+  top: 166px; /* 166px from the top */
+  left: 26px; /* 26px from the left */
+  z-index: 1; /* Ensure it appears above other elements */
+}
+.specification {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 17px;
+  margin-left: 24px; /* Matches left margin alignment */
+  position: absolute; /* Position it relative to the parent */
+  top: calc(124px + 84px + 52px); /* 52px below the car image */
+  z-index: 2; /* Ensure it appears above other elements */
+}
+/* Gasoline Container */
+.specification-gasoline {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+/* Vuesax Icon for Gasoline */
+.specification-gasoline-icon {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Gasoline SVG */
+.specification-gasoline-svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* Gasoline Text */
+.specification-gasoline-text {
+  display: flex;
+  width: 28px;
+  height: 24px;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--Secondary-300, #90A3BF);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 21px */
+  letter-spacing: -0.28px;
+}
+
+/* Car Specification */
+.specification-car {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+/* Car SVG */
+.specification-car-svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* Car Text */
+.specification-car-text {
+  display: flex;
+  width: 52px;
+  height: 24px;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--Secondary-300, #90A3BF);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 21px */
+  letter-spacing: -0.28px;
+}
+
+/* Capacity Specification */
+.specification-capacity {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+/* Vuesax Icon for Capacity */
+.specification-capacity-icon {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Capacity SVG */
+.specification-capacity-svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* Capacity Text */
+.specification-capacity-text {
+  display: flex;
+  width: 60px;
+  height: 24px;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--Secondary-300, #90A3BF);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 21px */
+  letter-spacing: -0.28px;
+}
+/* Rent Now Button */
+.rental-button {
+  display: flex;
+  width: 116px;
+  height: 44px;
+  padding: 0px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: var(--Primary-500, #3563E9);
+  border: none;
+  cursor: pointer;
+  position: absolute; /* Position it relative to the parent */
+  top: 320px; /* Adjust this value as needed */
+  right: 24px; /* Align with the left margin */
+}
+
+/* Rent Now Text */
+.rental-text {
+  display: flex;
+  width: 76px;
+  height: 24px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--Primary-0, #FFF);
+  text-align: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.32px;
+}
+.price {
+  display: flex; /* Use flexbox to align items horizontally */
+  justify-content: center;
+  gap: 4px; /* Space between price and subtext */
+  flex-shrink: 0;
+  position: absolute; /* Position it relative to the parent */
+  bottom: 36px; /* Adjust this value as needed */
+  left: 24px; /* Align with the left margin */
+}
+
+.price-amount {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--Secondary-500, #1A202C);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.price-subtext {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--Secondary-300, #90A3BF);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}

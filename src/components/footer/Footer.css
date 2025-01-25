@@ -8,7 +8,6 @@
     padding: 32px 60px; /* Adjust padding for spacing */
     flex-shrink: 0;
     box-sizing: border-box;
-    margin-top: 1724px;
     position: relative; /* Ensure relative positioning for child elements */
 }
 

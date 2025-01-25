@@ -1,19 +1,18 @@
-// App.js
 import React from 'react';
-import Footer from './components/footer/Footer';
+import PageLayout from './pages/PageLayout';
 import NavBarTop from './components/navbars/NavBarTop';
-import PageLayout from './pages/PageLayout'; // now references PageLayout.js
-import NavBarSide from './components/navbars/NavBarSide'
-import './index.css';
+import NavBarSide from './components/navbars/NavBarSide';
+import CarsCatalogue from './components/content/CarsCatalogue';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
     <PageLayout>
       <NavBarTop />
-      <NavBarSide />
-      <main>
-        {/* Your content... */}
-      </main>
+      <div style={{ display: 'flex', flex: 1 }}>
+        <NavBarSide />
+        <CarsCatalogue />
+      </div>
       <Footer />
     </PageLayout>
   );
