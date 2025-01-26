@@ -8,13 +8,4 @@ body{
   background: #F6F7F9;
 }
 
-/* Global Page Layout */
-.page-layout {
-  width: 1440px; /* Fixed width for desktop */
-  height: 2204px; /* Full height of the page */
-  margin: 0 auto; /* Center the layout horizontally */
-  background-color: #ffffff; /* Optional: Background color */
-  display: flex;
-  flex-direction: column; /* Align children vertically */
-  justify-content: space-between; /* Distribute space between children */
-}
+

@@ -13,7 +13,7 @@
     display: flex;
     justify-content: flex-end; /* right-align the search and like button */
     align-items: center;
-    padding: 0 60px; /* Horizontal space inside */
+    
     box-sizing: border-box;
   }
   
@@ -22,7 +22,6 @@
     position: absolute;
     top: 40px;
     left: 40px;
-    
     display: flex;
     align-items: center;
     font-family: "Plus Jakarta Sans", sans-serif;
@@ -33,11 +32,13 @@
     letter-spacing: -0.96px;
   }
   
-  /* Search container */
   .navbar-search {
     display: flex;
     align-items: center;
-    gap: 20px; /* Space between elements inside search */
+    gap: 20px;
+    position: absolute; /* Add absolute positioning */
+    left: 381px; /* 381px from left of container */
+    top: 40px; /* Align vertically with brand */
   }
   
   /* Search Button */
@@ -79,18 +80,20 @@
     height: 24px;
   }
   
-  /* Like Button Container */
-  .like-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 90px;
-    border: 1px solid rgba(195, 212, 233, 0.40);
-    background: #C3D4E966; /* 40% opacity */
-    margin-left: 24px; /* optional if you want a small gap from the search */
-  }
+ /* Update the .like-container */
+.like-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 90px;
+  border: 1px solid rgba(195, 212, 233, 0.40);
+  background: #C3D4E966;
+  position: absolute; /* Add absolute positioning */
+  right: 30px; /* 30px from right */
+  top: 40px; /* 40px from top */
+}
   
   /* Like Button */
   .like-button {
