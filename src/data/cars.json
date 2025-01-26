@@ -8,7 +8,8 @@
       "transmission": "Manual",
       "capacity": "2 People",
       "price": 99.00,
-      "isFavorite": false
+      "isFavorite": false,
+      "style": { "width": "272px", "height": "84px", "flexShrink": 0 }
     },
     {
       "id": 2,
@@ -19,7 +20,8 @@
       "transmission": "Automatic",
       "capacity": "5 People",
       "price": 120.00,
-      "isFavorite": true
+      "isFavorite": true,
+      "style": { "width": "228px", "height": "72px", "flexShrink": 0 }
     },
     {
       "id": 3,
@@ -30,7 +32,8 @@
       "transmission": "Automatic",
       "capacity": "5 People",
       "price": 70.00,
-      "isFavorite": false
+      "isFavorite": false,
+      "style": { "width": "244px", "height": "76px", "flexShrink": 0 }
     },
     {
       "id": 4,
@@ -41,7 +44,8 @@
       "transmission": "Manual",
       "capacity": "4 People",
       "price": 110.00,
-      "isFavorite": false
+      "isFavorite": false,
+      "style": { "width": "252px", "height": "112px", "flexShrink": 0 }
     },
     {
       "id": 5,
@@ -52,7 +56,8 @@
       "transmission": "Automatic",
       "capacity": "5 People",
       "price": 130.00,
-      "isFavorite": true
+      "isFavorite": true,
+      "style": { "width": "254px", "height": "102px", "flexShrink": 0 }
     },
     {
       "id": 6,
@@ -63,7 +68,8 @@
       "transmission": "Automatic",
       "capacity": "5 People",
       "price": 90.00,
-      "isFavorite": false
+      "isFavorite": false,
+      "style": { "width": "252px", "height": "112px", "flexShrink": 0 }
     },
     {
       "id": 7,
@@ -74,7 +80,8 @@
       "transmission": "Manual",
       "capacity": "2 People",
       "price": 200.00,
-      "isFavorite": true
+      "isFavorite": true,
+      "style": { "width": "264px", "height": "108px", "flexShrink": 0 }
     },
     {
       "id": 8,
@@ -85,7 +92,8 @@
       "transmission": "Automatic",
       "capacity": "5 People",
       "price": 60.00,
-      "isFavorite": false
+      "isFavorite": false,
+      "style": { "width": "308px", "height": "120px", "flexShrink": 0 }
     },
     {
       "id": 9,
@@ -96,6 +104,8 @@
       "transmission": "Manual",
       "capacity": "5 People",
       "price": 150.00,
-      "isFavorite": false
+      "isFavorite": false,
+      "style": { "width": "264px", "height": "108px", "flexShrink": 0 }
     }
   ]
+  

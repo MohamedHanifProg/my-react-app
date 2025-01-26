@@ -4,6 +4,7 @@ import NavBarTop from "./components/navbars/NavBarTop";
 import NavBarSide from "./components/navbars/NavBarSide";
 import Footer from "./components/footer/Footer";
 import CarCard from "./components/content/CarCard"; // Import the CarCard component
+import CarsCatalogue from "./components/content/CarsCatalogue";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         {/* Car Cards Section */}
         <div style={{ flex: 1, padding: "20px" }}>
           <CarCard /> {/* Render the CarCard component here */}
+          <CarsCatalogue />
         </div>
       </div>
 

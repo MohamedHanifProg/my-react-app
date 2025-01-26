@@ -24,7 +24,7 @@
   width: 1440px;
   min-height: 100vh;
   background: #f6f7f9;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 /* Wrapper for the two text items */
@@ -149,19 +149,14 @@
   height: 24px;
   flex-shrink: 0;
 }
-/* Car Image Container */
+/* Base styles for all car images */
 .car-image {
-  width: 272px; /* Match Figma width */
-  height: 84px; /* Match Figma height */
-  flex-shrink: 0; /* Prevent shrinking */
-  background: url("/public/assets/Car1.jpg") lightgray -19.147px -40.552px / 109.391% 172.414% no-repeat; /* Match Figma background */
-  position: absolute; /* Position it relative to the parent */
-  top: 124px; /* 124px from the top */
-  left: 22px; /* 22px from the left */
-  background-position: center;
+  position: absolute;
   background-size: cover;
-  
-  
+  background-position: center;
+  top: 124px; /* Default position */
+  left: 22px; /* Default position */
+  z-index: 2;
 }
 
 /* Shadow Element */
@@ -171,8 +166,8 @@
   flex-shrink: 0;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFF 100%);
   position: absolute; /* Position it relative to the parent */
-  top: 166px; /* 166px from the top */
-  left: 26px; /* 26px from the left */
+  top: 42px; /* 166px from the top */
+  left: 4px; /* 26px from the left */
   z-index: 1; /* Ensure it appears above other elements */
 }
 .specification {

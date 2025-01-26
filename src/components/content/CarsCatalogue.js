@@ -1,22 +1,33 @@
-import React from "react";
+// CarsCatalogue.js (final corrected version)
+import React, { useState, useEffect } from "react";
 import CarCard from "./CarCard";
+import carsData from "../../data/cars.json";
 
 function CarsCatalogue() {
-  // Array of 12 placeholders for cards
-  const cards = Array(12).fill(null);
+  const [cars, setCars] = useState([]);
+
+  useEffect(() => {
+    // Create unique IDs for duplicated cars
+    const duplicatedCars = [
+      ...carsData,
+      ...carsData.slice(0, 3).map((car, index) => ({
+        ...car,
+        id: carsData.length + index + 1 // Generates IDs 10, 11, 12
+      }))
+    ];
+    setCars(duplicatedCars);
+  }, []);
 
   return (
     <div className="cars-catalogue">
-      {/* Header */}
       <div className="catalogue-header">
         <div className="catalogue-title">Cars Catalogue</div>
-        <div className="catalogue-count">{cards.length} Cars</div>
+        <div className="catalogue-count">{cars.length} Cars</div>
       </div>
 
-      {/* Card Container */}
-      <div className="catalogue-container">
-        {cards.map((_, index) => (
-          <CarCard key={index} />
+      <div className="cars-grid">
+        {cars.map((car) => (
+          <CarCard key={car.id} car={car} />
         ))}
       </div>
     </div>
