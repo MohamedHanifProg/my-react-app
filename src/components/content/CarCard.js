@@ -30,13 +30,11 @@ function CarCard({ car }) {
       </div>
 
       {/* Car Image with Dynamic Styling */}
-      <div
-        className="car-image"
-        style={{
-          ...car?.style,
-          backgroundImage: `url(${car?.image})`
-        }}
-      ></div>
+          <div
+              className="car-image"
+              style={{ backgroundImage: `url(${car?.image})` }}
+              data-car-id={car.id} // Add this line
+          ></div>
 
       {/* Image Shadow Effect */}
       <div className="shadow"></div>

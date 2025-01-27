@@ -43,6 +43,7 @@
     flex-direction: column;
     justify-content: center;
     color: var(--Secondary-300, #90A3BF);
+    white-space: nowrap;
   
     /* Typography: Semibold/Type@12 */
     font-family: "Plus Jakarta Sans", sans-serif;

@@ -1,23 +1,7 @@
-// CarsCatalogue.js (final corrected version)
-import React, { useState, useEffect } from "react";
+import React from "react";
 import CarCard from "./CarCard";
-import carsData from "../../data/cars.json";
 
-function CarsCatalogue() {
-  const [cars, setCars] = useState([]);
-
-  useEffect(() => {
-    // Create unique IDs for duplicated cars
-    const duplicatedCars = [
-      ...carsData,
-      ...carsData.slice(0, 3).map((car, index) => ({
-        ...car,
-        id: carsData.length + index + 1 // Generates IDs 10, 11, 12
-      }))
-    ];
-    setCars(duplicatedCars);
-  }, []);
-
+function CarsCatalogue({ cars = [] }) {
   return (
     <div className="cars-catalogue">
       <div className="catalogue-header">
