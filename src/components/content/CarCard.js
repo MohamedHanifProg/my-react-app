@@ -1,7 +1,8 @@
+
 import React from "react";
 import "./CarCard.css";
 
-function CarCard({ car }) {
+function CarCard({ car ,onToggleFavorite }) {
     if (!car) return null;
   return (
     <div className="catalog-card">
@@ -11,8 +12,8 @@ function CarCard({ car }) {
         <div className="car-name-type">{car.type}</div>
       </div>
 
-      {/* Favorite Button */}
-      <div className="vuesax">
+    {/* Favorite Button */}
+    <div className="vuesax" onClick={() => onToggleFavorite(car.id)}>
         <svg
           className="vuesax-heart"
           xmlns="http://www.w3.org/2000/svg"

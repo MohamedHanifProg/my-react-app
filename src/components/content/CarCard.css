@@ -401,6 +401,6 @@
   display: grid;
   grid-template-columns: repeat(3, 317px); /* 3 cards per row */
   gap: 32px;
-  
+  margin-bottom: 32px;
   
 }

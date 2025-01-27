@@ -1,112 +1,113 @@
+
 /* Wrapper for the NavBarTop */
 .navbar-top {
-    width: 1440px;
-    height: 124px;
-    flex-shrink: 0;
-    border: 1px solid rgba(195, 212, 233, 0.40);
-    background: var(--Primary-0, #FFF); /* Primary/0 */
-    
-    /* Use position: relative to allow absolute-positioned children */
-    position: relative;
-    
-    /* Flex alignment for the search & like button (which are not absolute) */
-    display: flex;
-    justify-content: flex-end; /* right-align the search and like button */
-    align-items: center;
-    
-    box-sizing: border-box;
-  }
+  width: 100%px;
+  height: 124px;
+  flex-shrink: 0;
+  border: 1px solid rgba(195, 212, 233, 0.40);
+  background: var(--Primary-0, #FFF); /* Primary/0 */
   
-  /* Brand Name - placed absolutely 40px from top, 40px from left */
-  .navbar-brand {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    display: flex;
-    align-items: center;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--Primary-500, #3563E9);
-    line-height: 150%; /* ~48px */
-    letter-spacing: -0.96px;
-  }
+  /* Use position: relative to allow absolute-positioned children */
+  position: relative;
   
-  .navbar-search {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    position: absolute; /* Add absolute positioning */
-    left: 381px; /* 381px from left of container */
-    top: 40px; /* Align vertically with brand */
-  }
+  /* Flex alignment for the search & like button (which are not absolute) */
+  display: flex;
+  justify-content: flex-end; /* right-align the search and like button */
+  align-items: center;
   
-  /* Search Button */
-  .search-button {
-    display: flex;
-    align-items: center;
-    width: 492px;
-    height: 44px;
-    border-radius: 70px;
-    border: 1px solid rgba(195, 212, 233, 0.40);
-    background: var(--Primary-0, #FFF); /* Primary/0 */
-    padding: 0 16px;
-    box-sizing: border-box;
-  }
-  
-  /* Search Text */
-  .search-text {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--Secondary-400, #596780);
-    line-height: 150%; /* 24px */
-    letter-spacing: -0.32px;
-    flex: 1; /* Push icon to the right */
-    text-align: justify;
-  }
-  
-  /* Search Icon */
-  .search-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 24px;
-    height: 24px;
-  }
-  
-  .search-icon svg {
-    width: 24px;
-    height: 24px;
-  }
-  
- /* Update the .like-container */
-.like-container {
+  box-sizing: border-box;
+}
+
+/* Brand Name - placed absolutely 40px from top, 40px from left */
+.navbar-brand {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--Primary-500, #3563E9);
+  line-height: 150%; /* ~48px */
+  letter-spacing: -0.96px;
+}
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: absolute; /* Add absolute positioning */
+  left: 381px; /* 381px from left of container */
+  top: 40px; /* Align vertically with brand */
+}
+
+/* Search Button */
+.search-button {
+  display: flex;
+  align-items: center;
+  width: 492px;
+  height: 44px;
+  border-radius: 70px;
+  border: 1px solid rgba(195, 212, 233, 0.40);
+  background: var(--Primary-0, #FFF); /* Primary/0 */
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* Search Text */
+.search-text {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--Secondary-400, #596780);
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.32px;
+  flex: 1; /* Push icon to the right */
+  text-align: justify;
+}
+
+/* Search Icon */
+.search-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 90px;
-  border: 1px solid rgba(195, 212, 233, 0.40);
-  background: #C3D4E966;
-  position: absolute; /* Add absolute positioning */
-  right: 30px; /* 30px from right */
-  top: 40px; /* 40px from top */
+  width: 24px;
+  height: 24px;
 }
-  
-  /* Like Button */
-  .like-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 24px;
-    height: 24px;
-  }
-  
-  .like-button svg {
-    width: 24px;
-    height: 24px;
-    fill: #596780; /* Heart color */
-  }
-  
+
+.search-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Update the .like-container */
+.like-container {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 44px;
+height: 44px;
+border-radius: 90px;
+border: 1px solid rgba(195, 212, 233, 0.40);
+background: #C3D4E966;
+position: absolute; /* Add absolute positioning */
+right: 30px; /* 30px from right */
+top: 40px; /* 40px from top */
+}
+
+/* Like Button */
+.like-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+}
+
+.like-button svg {
+  width: 24px;
+  height: 24px;
+  fill: #596780; /* Heart color */
+}
+
