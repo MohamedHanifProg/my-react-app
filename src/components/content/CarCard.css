@@ -404,3 +404,72 @@
   margin-bottom: 32px;
   
 }
+/* Container for the Car Details Page */
+.car-details-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* View Section */
+.car-details-view {
+  width: 492px;
+  height: 360px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: var(--Primary-500, #3563E9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Section Inside View */
+.car-details-bg {
+  width: 758px;
+  height: 360px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Group Section Inside Background */
+.car-details-group {
+  width: 758px;
+  height: 360px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Rectangle Shared Style */
+.car-details-rectangle {
+  width: 75px;
+  height: 120px;
+  flex-shrink: 0;
+  fill: rgba(255, 255, 255, 0.06);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Rectangle SVG Styling */
+.car-details-rectangle svg {
+  width: 75px;
+  height: 120px;
+  fill: rgba(255, 255, 255, 0.06);
+}
+
+/* Image Section Inside Background */
+.car-details-image {
+  width: 380px;
+  height: 120px;
+  flex-shrink: 0;
+  background: url('/public/assets/Car1.jpg') lightgray 0px -90px / 100% 235.366% no-repeat;
+  border-radius: 10px;
+}

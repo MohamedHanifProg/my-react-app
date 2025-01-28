@@ -1,11 +1,16 @@
 
 import React from "react";
 import "./CarCard.css";
-
+import { useNavigate } from "react-router-dom"; // Import navigation hook
 function CarCard({ car ,onToggleFavorite }) {
+  const navigate = useNavigate(); // Use navigate hook for routing
     if (!car) return null;
   return (
-    <div className="catalog-card">
+    <div
+    className="catalog-card"
+    onClick={() => navigate(`/car/${car.id}`)} // Navigate to CarDetailsPage
+  >
+      
       {/* Card Header */}
       <div className="car-name">
         <div className="car-name-title">{car.name}</div>
