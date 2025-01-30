@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import './NavBarTop.css';
 
 function NavBarTop({ onSearch, onToggleFavorites, showFavorites }) {
-  const navigate = useNavigate(); // Initialize navigation
+  const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState('');
-  const [isFavoritesActive, setIsFavoritesActive] = useState(false);
 
   useEffect(() => {
     const debounceTimer = setTimeout(() => {
@@ -19,19 +18,21 @@ function NavBarTop({ onSearch, onToggleFavorites, showFavorites }) {
   };
 
   const handleToggleFavorites = () => {
-    setIsFavoritesActive(!isFavoritesActive);
-    if (onToggleFavorites) onToggleFavorites(!isFavoritesActive);
+    if (onToggleFavorites) {
+      console.log("Toggling Favorites. Current state:", showFavorites);
+      onToggleFavorites(!showFavorites);
+    }
   };
 
   return (
     <div className="navbar-top">
-      {/* Clickable Brand Logo that navigates to Home */}
+      {/* Brand Logo */}
       <div 
         className="navbar-brand"
-        onClick={() => navigate('/')} // Navigate to HomePage
+        onClick={() => navigate('/')}
         role="button"
         tabIndex={0}
-        style={{ cursor: "pointer" }} // Make it clear it's clickable
+        style={{ cursor: "pointer" }}
       >
         ShenCarCar
       </div>
@@ -83,7 +84,13 @@ function NavBarTop({ onSearch, onToggleFavorites, showFavorites }) {
         tabIndex={0}
       >
         <div className="like-button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill={isFavoritesActive ? "#ED3F3F" : "#596780"}>
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="24" 
+            height="24" 
+            viewBox="0 0 24 24" 
+            fill={showFavorites ? "#ED3F3F" : "#596780"}
+          >
             <path
               d="M16.44 3.1C14.63 3.1 13.01 3.98 12 5.33C10.99 3.98 9.37 3.1 7.56 3.1C4.49 3.1 2 5.6 2 8.69C2 9.88 2.19 10.98 2.52 12C4.1 17 8.97 19.99 11.38 20.81C11.72 20.93 12.28 20.93 12.62 20.81C15.03 19.99 19.9 17 21.48 12C21.81 10.98 22 9.88 22 8.69C22 5.6 19.51 3.1 16.44 3.1Z"
             />

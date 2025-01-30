@@ -14,8 +14,10 @@
   /* Secondary/500 */
   --Secondary-500: #1A202C;
   /* White transparent & white */
-  --White-Transparent: #FFFFFF00; /* 0% */
-  --White: #FFFFFF;               /* 100% */
+  --White-Transparent: #FFFFFF00;
+  /* 0% */
+  --White: #FFFFFF;
+  /* 100% */
   /* Additional color e.g. #ED3F3F */
   --Error: #ED3F3F;
 }
@@ -31,7 +33,8 @@
 .catalogue-header {
   display: flex;
   align-items: center;
-  gap: 2px; /* space between "Cars Catalogue" and "86 Cars" */
+  gap: 2px;
+  /* space between "Cars Catalogue" and "86 Cars" */
   margin-bottom: 28px;
 }
 
@@ -50,7 +53,8 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 150%; /* 30px */
+  line-height: 150%;
+  /* 30px */
   letter-spacing: -0.6px;
 }
 
@@ -70,9 +74,11 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 150%; /* 21px */
+  line-height: 150%;
+  /* 21px */
   letter-spacing: -0.28px;
 }
+
 /* Layout for Catalog 1 */
 .catalog-card {
   display: flex;
@@ -81,22 +87,28 @@
   border-radius: 10px;
   width: 317px;
   height: 388px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
-  flex-direction: column; /* Ensure vertical layout inside the card */
-  position: relative; /* Set relative positioning for absolute adjustments */
-  
-  margin-left: 32px; /* 32px from the left */
-  
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* Optional shadow */
+  flex-direction: column;
+  /* Ensure vertical layout inside the card */
+  position: relative;
+  /* Set relative positioning for absolute adjustments */
+
+  margin-left: 32px;
+  /* 32px from the left */
+
 }
+
 /* Car Name Container */
 .car-name {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
-  margin-left: 24px; /* 24px from the left */
+  margin-left: 24px;
+  /* 24px from the left */
   margin-top: 24px;
-  
+
 }
 
 /* First Text (e.g., "Koenigsegg") */
@@ -111,7 +123,8 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 150%; /* 30px */
+  line-height: 150%;
+  /* 30px */
   letter-spacing: -0.6px;
 }
 
@@ -127,9 +140,11 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
-  line-height: 150%; /* 21px */
+  line-height: 150%;
+  /* 21px */
   letter-spacing: -0.28px;
 }
+
 /* Vuesax Container */
 .vuesax {
   display: flex;
@@ -138,9 +153,12 @@
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  position: absolute; /* To position it relative to the card */
-  top: 24px; /* 24px from the top */
-  right: 24px; /* 24px from the right */
+  position: absolute;
+  /* To position it relative to the card */
+  top: 24px;
+  /* 24px from the top */
+  right: 24px;
+  /* 24px from the right */
 }
 
 /* Heart SVG */
@@ -149,6 +167,7 @@
   height: 24px;
   flex-shrink: 0;
 }
+
 /* Base styles for all car images */
 .car-image {
   position: absolute;
@@ -160,6 +179,7 @@
   left: 22px;
   z-index: 2;
 }
+
 /* Car 4 - Ford Mustang */
 .car-image[data-car-id="4"] {
   width: 252px;
@@ -200,26 +220,37 @@
   left: 10px;
   top: 116px;
 }
+
 /* Shadow Element */
 .shadow {
   width: 264px;
   height: 66px;
   flex-shrink: 0;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFF 100%);
-  position: absolute; /* Position it relative to the parent */
-  top: 42px; /* 166px from the top */
-  left: 4px; /* 26px from the left */
-  z-index: 1; /* Ensure it appears above other elements */
+  position: absolute;
+  /* Position it relative to the parent */
+  top: 42px;
+  /* 166px from the top */
+  left: 4px;
+  /* 26px from the left */
+  z-index: 1;
+  /* Ensure it appears above other elements */
 }
+
 .specification {
   display: inline-flex;
   align-items: flex-start;
   gap: 17px;
-  margin-left: 24px; /* Matches left margin alignment */
-  position: absolute; /* Position it relative to the parent */
-  top: calc(124px + 84px + 52px); /* 52px below the car image */
-  z-index: 2; /* Ensure it appears above other elements */
+  margin-left: 24px;
+  /* Matches left margin alignment */
+  position: absolute;
+  /* Position it relative to the parent */
+  top: calc(124px + 84px + 52px);
+  /* 52px below the car image */
+  z-index: 2;
+  /* Ensure it appears above other elements */
 }
+
 /* Gasoline Container */
 .specification-gasoline {
   display: flex;
@@ -255,7 +286,8 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 150%; /* 21px */
+  line-height: 150%;
+  /* 21px */
   letter-spacing: -0.28px;
 }
 
@@ -285,7 +317,8 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 150%; /* 21px */
+  line-height: 150%;
+  /* 21px */
   letter-spacing: -0.28px;
 }
 
@@ -324,9 +357,11 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 150%; /* 21px */
+  line-height: 150%;
+  /* 21px */
   letter-spacing: -0.28px;
 }
+
 /* Rent Now Button */
 .rental-button {
   display: flex;
@@ -341,9 +376,12 @@
   background: var(--Primary-500, #3563E9);
   border: none;
   cursor: pointer;
-  position: absolute; /* Position it relative to the parent */
-  top: 320px; /* Adjust this value as needed */
-  right: 24px; /* Align with the left margin */
+  position: absolute;
+  /* Position it relative to the parent */
+  top: 320px;
+  /* Adjust this value as needed */
+  right: 24px;
+  /* Align with the left margin */
 }
 
 /* Rent Now Text */
@@ -360,17 +398,24 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: 150%; /* 24px */
+  line-height: 150%;
+  /* 24px */
   letter-spacing: -0.32px;
 }
+
 .price {
-  display: flex; /* Use flexbox to align items horizontally */
+  display: flex;
+  /* Use flexbox to align items horizontally */
   justify-content: center;
-  gap: 4px; /* Space between price and subtext */
+  gap: 4px;
+  /* Space between price and subtext */
   flex-shrink: 0;
-  position: absolute; /* Position it relative to the parent */
-  bottom: 36px; /* Adjust this value as needed */
-  left: 24px; /* Align with the left margin */
+  position: absolute;
+  /* Position it relative to the parent */
+  bottom: 36px;
+  /* Adjust this value as needed */
+  left: 24px;
+  /* Align with the left margin */
 }
 
 .price-amount {
@@ -399,8 +444,9 @@
 
 .cars-grid {
   display: grid;
-  grid-template-columns: repeat(3, 317px); /* 3 cards per row */
+  grid-template-columns: repeat(3, 317px);
+  /* 3 cards per row */
   gap: 32px;
   margin-bottom: 32px;
-  
+
 }
