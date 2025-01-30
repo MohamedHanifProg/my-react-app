@@ -10,7 +10,6 @@
     display: flex;
     flex: 1;
     width: 100%;
-    
 }
 
 
@@ -157,19 +156,27 @@
     align-items: center;
 }
 
-/* Stroke Border (Outer Frame for View 1) */
+
 .stroke {
-    width: 148px;
-    height: 124px;
-    flex-shrink: 0;
-    border-radius: 10px;
-    border: 2px solid var(--Primary-500, #3563E9);
+    padding: 5px; /* Keeps spacing even */
+    transition: border 0.3s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    width: 148px;
+    height: 124px;
+    margin-left: 10px;
+}
+
+.stroke-selected {
+    border: 2px solid var(--Primary-500, #3563E9);
+    border-radius: 8px; /* Optional rounded corners */
+    width: 170px;
+    height: 124px;
     margin-left: 32px;
 }
+
+
 
 /* View 1.1 - Inner Box */
 .view-1-1 {
@@ -210,7 +217,7 @@
 }
 
 .view-3 {
-    margin-left: 16px; /* Ensures View 3 is 16px after View 2 */
+    margin-left: 24px; /* Ensures View 3 is 16px after View 2 */
 }
 
 /* Image inside View 2 and View 3 (Fully Filling the Container) */
@@ -357,7 +364,7 @@
     border: none;
     cursor: pointer;
     position: absolute; /* Position it relative to the parent */
-    top: 420px;
+    top: 425px;
     right: 24px; /* Align with the left margin */
   }
   
@@ -394,7 +401,7 @@
     justify-content: center;
     color: var(--Secondary-500, #1A202C);
     font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 20px;
+    font-size: 28px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;

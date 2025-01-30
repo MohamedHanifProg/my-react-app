@@ -1,18 +1,16 @@
-
 import React, { useState, useEffect } from 'react';
-
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './NavBarTop.css';
 
 function NavBarTop({ onSearch, onToggleFavorites, showFavorites }) {
+  const navigate = useNavigate(); // Initialize navigation
   const [searchValue, setSearchValue] = useState('');
   const [isFavoritesActive, setIsFavoritesActive] = useState(false);
 
-  // Debounce search input
   useEffect(() => {
     const debounceTimer = setTimeout(() => {
       if (onSearch) onSearch(searchValue);
     }, 300);
-
     return () => clearTimeout(debounceTimer);
   }, [searchValue, onSearch]);
 
@@ -27,20 +25,18 @@ function NavBarTop({ onSearch, onToggleFavorites, showFavorites }) {
 
   return (
     <div className="navbar-top">
-      {/* Clickable Brand Logo */}
+      {/* Clickable Brand Logo that navigates to Home */}
       <div 
         className="navbar-brand"
-        onClick={() => {
-          setSearchValue('');
-          if (onSearch) onSearch('');
-        }}
+        onClick={() => navigate('/')} // Navigate to HomePage
         role="button"
         tabIndex={0}
+        style={{ cursor: "pointer" }} // Make it clear it's clickable
       >
         ShenCarCar
       </div>
 
-      {/* Integrated Search Input */}
+      {/* Search Bar */}
       <div className="navbar-search">
         <div className="search-button">
           <input
@@ -54,7 +50,7 @@ function NavBarTop({ onSearch, onToggleFavorites, showFavorites }) {
               background: 'transparent',
               outline: 'none',
               width: '100%',
-              paddingRight: '40px' // Space for icon
+              paddingRight: '40px'
             }}
             aria-label="Search car by name"
           />
