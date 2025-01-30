@@ -1,16 +1,15 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom'; // ניווט
 import './Footer.css';
 
 function Footer() {
-  const navigate = useNavigate(); // Initialize navigation
+  const navigate = useNavigate(); // אתחול הניווט
 
   return (
     <footer className="footer">
-      {/* Horizontal line divider */}
+      {/* קו מפריד */}
       <div className="footer-line"></div>
 
-      {/* Clickable Logo Section */}
       <div 
         className="footer-logo"
         onClick={() => navigate('/')} // Navigate to HomePage
@@ -21,48 +20,44 @@ function Footer() {
           Your reliable source for car rentals and more.
         </p>
       </div>
-
-      {/* About Section */}
+      {/* קישורים לא פעילים */}
       <div className="footer-about footer-section">
         <h3 className="footer-section-title">About</h3>
         <div className="footer-section-content">
-          <a href="#">Our History</a>
-          <a href="#">Our Team</a>
-          <a href="#">Contact Us</a>
+          <span role="button">Our History</span>
+          <span role="button">Our Team</span>
+          <span role="button">Contact Us</span>
         </div>
       </div>
 
-      {/* Community Section */}
       <div className="footer-community footer-section">
         <h3 className="footer-section-title">Community</h3>
         <div className="footer-section-content">
-          <a href="#">Events</a>
-          <a href="#">Forums</a>
-          <a href="#">Blogs</a>
+          <span role="button">Events</span>
+          <span role="button">Forums</span>
+          <span role="button">Blogs</span>
         </div>
       </div>
 
-      {/* Socials Section */}
       <div className="footer-socials">
         <h3 className="footer-socials-title">Socials</h3>
         <div className="footer-socials-content">
-          <a href="#">Facebook</a>
-          <a href="#">Twitter</a>
-          <a href="#">Instagram</a>
+          <span role="button">Facebook</span>
+          <span role="button">Twitter</span>
+          <span role="button">Instagram</span>
         </div>
       </div>
 
-      {/* Copyright */}
+      {/* זכויות יוצרים */}
       <div className="footer-copyright">
         ©2025 ShenCarCar
       </div>
 
-      {/* Privacy & Policy */}
+      {/* פרטיות ותנאים */}
       <div className="footer-privacy">
         Privacy &amp; Policy
       </div>
 
-      {/* Terms & Condition */}
       <div className="footer-terms">
         Terms &amp; Condition
       </div>

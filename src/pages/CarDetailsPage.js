@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import NavBarTop from "../components/navbars/NavBarTop";
 import NavBarSide from "../components/navbars/NavBarSide";
 import Footer from "../components/footer/Footer";
@@ -8,7 +8,6 @@ import "../components/content/CarDetails.css";
 
 function CarDetails() {
     const { id } = useParams();
-    const navigate = useNavigate();
     const [selectedCar, setSelectedCar] = useState(null);
     const [favorite, setFavorite] = useState(false);
     const [selectedImageIndex, setSelectedImageIndex] = useState(0); // Track the selected image index
@@ -94,47 +93,47 @@ function CarDetails() {
                     </div>
 
                     <div className="view1-container">
-    {/* View 1 */}
-    <div 
-        className={`view-1 ${selectedImageIndex === 0 ? "stroke-selected" : ""}`} 
-        onClick={() => handleImageClick(0)}
-    >
-        <div className="stroke">
-            <div className="view-1-1">
-                <img
-                    className="car-details-image-thumb"
-                    src={selectedCar?.images?.[0] || "/assets/default.jpg"}
-                    alt="View 1"
-                    onError={(e) => { e.target.src = "/assets/default.jpg"; }}
-                />
-            </div>
-        </div>
-    </div>
+                        {/* View 1 */}
+                        <div
+                            className={`view-1 ${selectedImageIndex === 0 ? "stroke-selected" : ""}`}
+                            onClick={() => handleImageClick(0)}
+                        >
+                            <div className="stroke">
+                                <div className="view-1-1">
+                                    <img
+                                        className="car-details-image-thumb"
+                                        src={selectedCar?.images?.[0] || "/assets/default.jpg"}
+                                        alt="View 1"
+                                        onError={(e) => { e.target.src = "/assets/default.jpg"; }}
+                                    />
+                                </div>
+                            </div>
+                        </div>
 
-    {/* View 2 */}
-    <div 
-        className={`view-2 ${selectedImageIndex === 1 ? "stroke-selected" : ""}`} 
-        onClick={() => handleImageClick(1)}
-    >
-        <img
-            src={selectedCar?.images?.[1] || "/assets/View2.png"}
-            alt="View 2"
-            onError={(e) => { e.target.src = "/assets/default.jpg"; }}
-        />
-    </div>
+                        {/* View 2 */}
+                        <div
+                            className={`view-2 ${selectedImageIndex === 1 ? "stroke-selected" : ""}`}
+                            onClick={() => handleImageClick(1)}
+                        >
+                            <img
+                                src={selectedCar?.images?.[1] || "/assets/View2.png"}
+                                alt="View 2"
+                                onError={(e) => { e.target.src = "/assets/default.jpg"; }}
+                            />
+                        </div>
 
-    {/* View 3 */}
-    <div 
-        className={`view-3 ${selectedImageIndex === 2 ? "stroke-selected" : ""}`} 
-        onClick={() => handleImageClick(2)}
-    >
-        <img
-            src={selectedCar?.images?.[2] || "/assets/View3.png"}
-            alt="View 3"
-            onError={(e) => { e.target.src = "/assets/default.jpg"; }}
-        />
-    </div>
-</div>
+                        {/* View 3 */}
+                        <div
+                            className={`view-3 ${selectedImageIndex === 2 ? "stroke-selected" : ""}`}
+                            onClick={() => handleImageClick(2)}
+                        >
+                            <img
+                                src={selectedCar?.images?.[2] || "/assets/View3.png"}
+                                alt="View 3"
+                                onError={(e) => { e.target.src = "/assets/default.jpg"; }}
+                            />
+                        </div>
+                    </div>
 
 
                 </div>
@@ -149,19 +148,31 @@ function CarDetails() {
                         </div>
                     </div>
 
-                    {/* Reviews Section */}
                     <div className="reviews-container">
                         <div className="review-stars">
                             {[...Array(5)].map((_, i) => (
-                                <div key={i} className="star-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.16664 0.658349C8.22421 0.475814 8.33846 0.316382 8.49281 0.20321C8.64717 0.0900392 8.83358 0.0290222 9.02498 0.0290222C9.21637 0.0290222 9.40279 0.0900392 9.55714 0.20321C9.71149 0.316382 9.82575 0.475814 9.88331 0.658349L11.4333 5.42501H16.4333C16.6315 5.41752 16.8268 5.47513 16.9892 5.58905C17.1516 5.70296 17.2723 5.86692 17.3327 6.05586C17.3932 6.24481 17.3902 6.44835 17.324 6.63539C17.2579 6.82244 17.1324 6.9827 16.9666 7.09168L12.9083 10.0333L14.4583 14.8083C14.5196 14.9902 14.5212 15.187 14.4627 15.3698C14.4043 15.5526 14.2889 15.712 14.1335 15.8246C13.9781 15.9372 13.7907 15.9972 13.5988 15.9958C13.4068 15.9943 13.2204 15.9316 13.0666 15.8167L8.99998 12.8417L4.94164 15.7917C4.7879 15.9066 4.60145 15.9693 4.40951 15.9708C4.21758 15.9722 4.03022 15.9122 3.87479 15.7996C3.71936 15.687 3.604 15.5276 3.54557 15.3448C3.48713 15.162 3.48868 14.9652 3.54998 14.7833L5.09998 10.0083L1.04164 7.06668C0.875879 6.9577 0.750352 6.79744 0.684243 6.61039C0.618134 6.42335 0.615077 6.21981 0.675539 6.03086C0.736001 5.84192 0.856658 5.67796 1.01907 5.56405C1.18149 5.45013 1.37673 5.39252 1.57498 5.40002H6.57498L8.16664 0.658349Z" fill="#FBAD39" />
-                                    </svg>
-                                </div>
+                                <svg
+                                    key={i}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="18"
+                                    viewBox="0 0 20 18"
+                                    fill="none"
+                                >
+                                    {i < Math.round(selectedCar.stars) ? (
+                                        // Full Star SVG
+                                        <path fillRule="evenodd" clipRule="evenodd" d="M9.16664 1.65835C9.2242 1.47581 9.33846 1.31638 9.49281 1.20321C9.64717 1.09004 9.83358 1.02902 10.025 1.02902C10.2164 1.02902 10.4028 1.09004 10.5571 1.20321C10.7115 1.31638 10.8257 1.47581 10.8833 1.65835L12.4333 6.42502H17.4333C17.6315 6.41752 17.8268 6.47513 17.9892 6.58905C18.1516 6.70296 18.2723 6.86692 18.3327 7.05586C18.3932 7.24481 18.3902 7.44835 18.324 7.63539C18.2579 7.82244 18.1324 7.9827 17.9666 8.09168L13.9083 11.0333L15.4583 15.8083C15.5196 15.9902 15.5212 16.187 15.4627 16.3698C15.4043 16.5526 15.2889 16.712 15.1335 16.8246C14.9781 16.9372 14.7907 16.9972 14.5988 16.9958C14.4068 16.9943 14.2204 16.9316 14.0666 16.8167L9.99998 13.8417L5.94164 16.7917C5.7879 16.9066 5.60145 16.9693 5.40951 16.9708C5.21758 16.9722 5.03022 16.9122 4.87479 16.7996C4.71936 16.687 4.604 16.5276 4.54557 16.3448C4.48713 16.162 4.48868 15.9652 4.54998 15.7833L6.09998 11.0083L2.04164 8.06668C1.87588 7.9577 1.75035 7.79744 1.68424 7.61039C1.61813 7.42335 1.61508 7.21981 1.67554 7.03086C1.736 6.84192 1.85666 6.67796 2.01907 6.56405C2.18149 6.45013 2.37673 6.39252 2.57498 6.40002H7.57498L9.16664 1.65835Z" fill="#FBAD39" />
+                                    ) : (
+                                        // Empty Star SVG
+                                        <path fillRule="evenodd" clipRule="evenodd" d="M9.16664 1.65835C9.2242 1.47581 9.33846 1.31638 9.49281 1.20321C9.64717 1.09004 9.83358 1.02902 10.025 1.02902C10.2164 1.02902 10.4028 1.09004 10.5571 1.20321C10.7115 1.31638 10.8257 1.47581 10.8833 1.65835L12.4333 6.42502H17.4333C17.6315 6.41752 17.8268 6.47513 17.9892 6.58905C18.1516 6.70296 18.2723 6.86692 18.3327 7.05586C18.3932 7.24481 18.3902 7.44835 18.324 7.63539C18.2579 7.82244 18.1324 7.9827 17.9666 8.09168L13.9083 11.0333L15.4583 15.8083C15.5196 15.9902 15.5212 16.187 15.4627 16.3698C15.4043 16.5526 15.2889 16.712 15.1335 16.8246C14.9781 16.9372 14.7907 16.9972 14.5988 16.9958C14.4068 16.9943 14.2204 16.9316 14.0666 16.8167L9.99998 13.8417L5.94164 16.7917C5.7879 16.9066 5.60145 16.9693 5.40951 16.9708C5.21758 16.9722 5.03022 16.9122 4.87479 16.7996C4.71936 16.687 4.604 16.5276 4.54557 16.3448C4.48713 16.162 4.48868 15.9652 4.54998 15.7833L6.09998 11.0083L2.04164 8.06668C1.87588 7.9577 1.75035 7.79744 1.68424 7.61039C1.61813 7.42335 1.61508 7.21981 1.67554 7.03086C1.736 6.84192 1.85666 6.67796 2.01907 6.56405C2.18149 6.45013 2.37673 6.39252 2.57498 6.40002H7.57498L9.16664 1.65835Z" stroke="#90A3BF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                    )}
+                                </svg>
                             ))}
                         </div>
-                        <span className="reviews">4.5 (120 reviews)</span>
+
+                        <span className="reviews">{selectedCar.stars} ({selectedCar.reviews} reviews)</span>
                     </div>
+
 
                     {/* Description */}
                     <p className="cardetailstextcontainer">{selectedCar.description}</p>
@@ -210,3 +221,5 @@ function CarDetails() {
 }
 
 export default CarDetails;
+
+

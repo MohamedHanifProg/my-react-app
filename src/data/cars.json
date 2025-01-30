@@ -10,7 +10,7 @@
     "price": 99.00,
     "isFavorite": false,
     "reviews": 440,
-    "stars": 4.5,
+    "stars": 4,
     "description": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the \"race track\"."
   },
   {
@@ -24,7 +24,7 @@
     "price": 120.00,
     "isFavorite": true,
     "reviews": 320,
-    "stars": 4.8,
+    "stars": 5,
     "description": "Experience unmatched comfort and cutting-edge technology with the Tesla Model S, redefining electric vehicles."
   },
   {
@@ -38,7 +38,7 @@
     "price": 70.00,
     "isFavorite": false,
     "reviews": 210,
-    "stars": 4.2,
+    "stars": 3,
     "description": "Toyota Camry combines reliability and performance, making it a top choice for daily commutes."
   },
   {
@@ -52,7 +52,7 @@
     "price": 110.00,
     "isFavorite": false,
     "reviews": 150,
-    "stars": 4.0,
+    "stars": 4,
     "description": "Ford Mustang offers a perfect blend of power and style, designed for adventure seekers."
   },
   {
@@ -66,7 +66,7 @@
     "price": 130.00,
     "isFavorite": true,
     "reviews": 280,
-    "stars": 4.6,
+    "stars": 5,
     "description": "BMW X5 combines luxury and performance, offering a smooth ride for every journey."
   },
   {
@@ -80,7 +80,7 @@
     "price": 90.00,
     "isFavorite": false,
     "reviews": 190,
-    "stars": 4.3,
+    "stars": 3,
     "description": "Audi A4 is known for its elegant design and powerful performance, perfect for city drives."
   },
   {
@@ -94,7 +94,7 @@
     "price": 200.00,
     "isFavorite": true,
     "reviews": 330,
-    "stars": 4.7,
+    "stars": 2,
     "description": "Porsche 911 delivers unparalleled speed and luxury, a true icon of performance."
   },
   {
@@ -108,7 +108,7 @@
     "price": 60.00,
     "isFavorite": false,
     "reviews": 170,
-    "stars": 4.1,
+    "stars": 5,
     "description": "Honda Civic provides a fuel-efficient and comfortable ride, ideal for families."
   },
   {
@@ -122,7 +122,7 @@
     "price": 150.00,
     "isFavorite": false,
     "reviews": 250,
-    "stars": 4.4,
+    "stars": 5,
     "description": "Jeep Wrangler is built for adventure, with exceptional off-road capability."
   },
   {
@@ -136,7 +136,7 @@
     "price": 99.00,
     "isFavorite": false,
     "reviews": 300,
-    "stars": 4.6,
+    "stars": 4,
     "description": "The Nissan GT-R is a high-performance beast, designed for thrill seekers."
   },
   {
@@ -150,7 +150,7 @@
     "price": 250.00,
     "isFavorite": true,
     "reviews": 500,
-    "stars": 4.9,
+    "stars": 3,
     "description": "Lamborghini Huracan delivers an unmatched supercar experience with breathtaking speed and design."
   },
   {
@@ -164,7 +164,7 @@
     "price": 300.00,
     "isFavorite": true,
     "reviews": 550,
-    "stars": 5.0,
+    "stars": 5,
     "description": "Ferrari 488 offers precision engineering, stunning looks, and exhilarating performance for true car enthusiasts."
   }
 ]

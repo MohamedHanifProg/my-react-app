@@ -8,24 +8,26 @@ function HomePage() {
   const maxPrice = Math.max(...carsData.map((car) => car.price));
 
   const [searchQuery, setSearchQuery] = useState("");
-  const [filteredCars, setFilteredCars] = useState(carsData);
   const [showFavorites, setShowFavorites] = useState(false);
+  const [favoriteCars, setFavoriteCars] = useState(new Set());
+  const [filteredCars, setFilteredCars] = useState(carsData);
+
+  // Initially, no filters are selected (empty arrays)
   const [selectedFilters, setSelectedFilters] = useState({
-    types: [...new Set(carsData.map((car) => car.type))],
-    capacities: [...new Set(carsData.map((car) => car.capacity))],
-    priceRange: [minPrice, maxPrice],
+    types: [], // Empty means no filtering applied
+    capacities: [],
+    priceRange: [minPrice, maxPrice], // Default price range
   });
 
   const toggleFavorite = (carId) => {
-    const updatedCars = filteredCars.map((car) =>
-      car.id === carId ? { ...car, isFavorite: !car.isFavorite } : car
-    );
-    setFilteredCars(updatedCars);
-
-    carsData.forEach((car) => {
-      if (car.id === carId) {
-        car.isFavorite = !car.isFavorite;
+    setFavoriteCars((prevFavorites) => {
+      const newFavorites = new Set(prevFavorites);
+      if (newFavorites.has(carId)) {
+        newFavorites.delete(carId);
+      } else {
+        newFavorites.add(carId);
       }
+      return newFavorites;
     });
   };
 
@@ -39,19 +41,20 @@ function HomePage() {
     }
 
     if (showFavorites) {
-      result = result.filter((car) => car.isFavorite);
+      result = result.filter((car) => favoriteCars.has(car.id));
     }
 
+    // Apply filters only if they are selected
     result = result.filter(
       (car) =>
-        selectedFilters.types.includes(car.type) &&
-        selectedFilters.capacities.includes(car.capacity) &&
+        (selectedFilters.types.length === 0 || selectedFilters.types.includes(car.type)) &&
+        (selectedFilters.capacities.length === 0 || selectedFilters.capacities.includes(car.capacity)) &&
         car.price >= selectedFilters.priceRange[0] &&
         car.price <= selectedFilters.priceRange[1]
     );
 
     setFilteredCars(result);
-  }, [searchQuery, showFavorites, selectedFilters]);
+  }, [searchQuery, showFavorites, selectedFilters, favoriteCars]);
 
   return (
     <Layout
@@ -64,7 +67,13 @@ function HomePage() {
         maxPrice,
       }}
     >
-      <CarsCatalogue cars={filteredCars} onToggleFavorite={toggleFavorite} />
+      <CarsCatalogue
+        cars={filteredCars.map((car) => ({
+          ...car,
+          isFavorite: favoriteCars.has(car.id),
+        }))}
+        onToggleFavorite={toggleFavorite}
+      />
     </Layout>
   );
 }

@@ -137,6 +137,7 @@
     display: flex;
     flex-direction: column;
     gap: 24px;     /* Space between "Socials" heading and the list */
+    cursor: pointer;
 }
 
 /* Socials Title */
@@ -165,9 +166,7 @@
 /* Bottom Section (Line & Positions) */
 /* If you want them grouped, you can place them in a .footer-bottom container,
    but here's the default absolute positioning from your code: */
-.footer-bottom {
-  /* If you have a wrapper for bottom items, you can style it here */
-}
+
 
 /* ©2025 ShenCarCar Section */
 .footer-copyright {
@@ -206,4 +205,15 @@
     color: var(--Secondary-500, #1A202C); /* #1A202C */
     line-height: 150%; /* 24px */
     letter-spacing: -0.32px;
+}
+/* ביטול עיצוב קישורים ושמירה על הצבע המקורי */
+.footer-section-content span {
+    text-decoration: none; /* ללא קו תחתון */
+    color: inherit; /* שומר על הצבע המקורי */
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%; /* 24px */
+    letter-spacing: -0.32px;
+    cursor: pointer;
 }
