@@ -1,24 +1,24 @@
-
 import React from "react";
 import "./CarCard.css";
-import { useNavigate } from "react-router-dom"; // Import navigation hook
-function CarCard({ car ,onToggleFavorite }) {
-  const navigate = useNavigate(); // Use navigate hook for routing
-    if (!car) return null;
+import { useNavigate } from "react-router-dom";
+
+function CarCard({ car, onToggleFavorite }) {
+  const navigate = useNavigate();
+  if (!car) return null;
+
   return (
-    <div
-    className="catalog-card"
-    onClick={() => navigate(`/car/${car.id}`)} // Navigate to CarDetailsPage
-  >
-      
+    <div className="catalog-card">
       {/* Card Header */}
       <div className="car-name">
         <div className="car-name-title">{car.name}</div>
         <div className="car-name-type">{car.type}</div>
       </div>
 
-    {/* Favorite Button */}
-    <div className="vuesax" onClick={() => onToggleFavorite(car.id)}>
+      {/* Favorite Button */}
+      <div className="vuesax" onClick={(e) => {
+          e.stopPropagation(); // Prevent navigation when clicking favorite button
+          onToggleFavorite(car.id);
+        }}>
         <svg
           className="vuesax-heart"
           xmlns="http://www.w3.org/2000/svg"
@@ -35,12 +35,18 @@ function CarCard({ car ,onToggleFavorite }) {
         </svg>
       </div>
 
-      {/* Car Image with Dynamic Styling */}
-          <div
-              className="car-image"
-              style={{ backgroundImage: `url(${car?.image})` }}
-              data-car-id={car.id} // Add this line
-          ></div>
+      {/* Car Image - Click Here to Navigate */}
+      <div
+        className="car-image"
+        onClick={() => navigate(`/car/${car.id}`)} // Navigate only when clicking image
+        style={{
+          backgroundImage: `url(${car?.images[0]})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          cursor: "pointer" // Makes it clear that the image is clickable
+        }}
+        data-car-id={car.id}
+      ></div>
 
       {/* Image Shadow Effect */}
       <div className="shadow"></div>
@@ -125,6 +131,7 @@ function CarCard({ car ,onToggleFavorite }) {
           <div className="specification-capacity-text">{car.capacity}</div>
         </div>
       </div>
+
 
       {/* Price Section */}
       <div className="price">

@@ -12,7 +12,7 @@ function Layout({ children, navProps, sideProps }) {
         {/* Shared Side Navigation */}
         <NavBarSide {...sideProps} />
         {/* Dynamic Page Content */}
-        <div style={{ flex: 1, padding: "20px", overflowY: "auto" }}>
+        <div style={{ flex: 1, overflowY: "auto" }}>
           {children}
         </div>
       </div>

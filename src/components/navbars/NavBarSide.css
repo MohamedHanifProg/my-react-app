@@ -12,18 +12,20 @@
   /* ------------------------------------------------------------
      MAIN SIDEBAR CONTAINER
      ------------------------------------------------------------ */
-  .navbar-side {
-    display: inline-flex;
-    /* The padding indicates: top=32px, right=32px, bottom=816px, left=32px */
-    padding: 32px 32px 816px 32px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 56px;
-    border-right: 1px solid #F3F5F7;
-    background: var(--Primary-0, #FFF);
-    /* You can adjust width if needed */
-  }
-  
+     /* Fix excessive height in the sidebar */
+    /* Main sidebar container - Ensure it stretches to fill the height */
+/* Ensure NavBarSide stretches fully */
+.navbar-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 56px;
+  border-right: 1px solid #F3F5F7;
+  background: var(--Primary-0, #FFF);
+  padding: 32px;
+  flex-shrink: 0; /* Prevent shrinking */
+  overflow-y: auto; /* Allows scrolling if needed */
+}
   /* ------------------------------------------------------------
      GENERIC SECTION WRAPPER
      ------------------------------------------------------------ */
