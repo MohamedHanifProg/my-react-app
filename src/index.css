@@ -13,4 +13,5 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif;
   display: flex; 
   flex-direction: column; 
+  overflow-x: hidden
 }

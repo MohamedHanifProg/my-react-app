@@ -6,20 +6,25 @@
   --White-Transparent: #FFFFFF00;
   --White: #FFFFFF;
   --Error: #ED3F3F;
+  
 }
 
 .cars-catalogue {
-  width: 1440px;
+  width: 100%; /* Change fixed width to full width */
+  max-width: 1440px; /* Ensure it does not grow beyond 1440px */
   min-height: 100vh;
   background: #f6f7f9;
-  overflow-y: hidden;
+  overflow-x: hidden;
+  margin: 0 auto; /* Center it */
 }
+
 
 .catalogue-header {
   display: flex;
   align-items: center;
   gap: 2px;
   margin-bottom: 28px;
+  
 }
 
 .catalogue-title {
@@ -69,6 +74,7 @@
   flex-direction: column;
   position: relative;
   margin-left: 32px;
+  
 
 }
 
@@ -373,5 +379,6 @@
   grid-template-columns: repeat(3, 317px);
   gap: 32px;
   margin-bottom: 32px;
+  
 
 }
