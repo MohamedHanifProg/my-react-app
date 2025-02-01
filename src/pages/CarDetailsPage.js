@@ -5,24 +5,19 @@ import NavBarSide from "../components/navbars/NavBarSide";
 import Footer from "../components/footer/Footer";
 import carsData from "../data/cars.json";
 import "../components/content/CarDetails.css";
-import { useNavigate } from "react-router-dom"; // Import this for navigation
+import { useNavigate } from "react-router-dom"; 
 
 function CarDetailsPage({ favoriteCars, toggleFavorite, showFavorites, setShowFavorites }) {
     const { id } = useParams();
-    const navigate = useNavigate(); // Initialize navigation
+    const navigate = useNavigate(); 
     const [selectedCar, setSelectedCar] = useState(null);
     const [favorite, setFavorite] = useState(false);
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
     useEffect(() => {
-        if (showFavorites) {
-            navigate("/"); // Redirect to HomePage if showFavorites is active
-            return;
-        }
-
         const carId = parseInt(id, 10);
         const foundCar = carsData.find(car => car.id === carId);
-
+    
         if (foundCar) {
             setSelectedCar(foundCar);
             setFavorite(favoriteCars.has(foundCar.id));
@@ -30,8 +25,8 @@ function CarDetailsPage({ favoriteCars, toggleFavorite, showFavorites, setShowFa
             console.error(`Car with ID ${carId} not found`);
             setSelectedCar(null);
         }
-    }, [id, favoriteCars, showFavorites, navigate]);
-
+    }, [id, favoriteCars]); // Removed showFavorites and navigate dependencies
+    
     const toggleFavoriteStatus = () => {
         toggleFavorite(selectedCar.id);
         setFavorite(!favorite);
@@ -47,7 +42,6 @@ function CarDetailsPage({ favoriteCars, toggleFavorite, showFavorites, setShowFa
 
     return (
         <div className="car-details-container">
-            {/* ✅ FIXED: Pass showFavorites and setShowFavorites to NavBarTop */}
             <NavBarTop
                 onToggleFavorites={setShowFavorites}
                 showFavorites={showFavorites}
@@ -162,3 +156,4 @@ function CarDetailsPage({ favoriteCars, toggleFavorite, showFavorites, setShowFa
 }
 
 export default CarDetailsPage;
+

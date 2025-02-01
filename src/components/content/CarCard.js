@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./CarCard.css";
 import { useNavigate } from "react-router-dom";
@@ -8,17 +9,16 @@ function CarCard({ car, onToggleFavorite }) {
 
   return (
     <div className="catalog-card">
-      {/* Card Header */}
       <div className="car-name">
         <div className="car-name-title">{car.name}</div>
         <div className="car-name-type">{car.type}</div>
       </div>
 
-      {/* Favorite Button */}
+
       <div className="vuesax" onClick={(e) => {
-          e.stopPropagation(); // Prevent navigation when clicking favorite button
-          onToggleFavorite(car.id);
-        }}>
+        e.stopPropagation();
+        onToggleFavorite(car.id);
+      }}>
         <svg
           className="vuesax-heart"
           xmlns="http://www.w3.org/2000/svg"
@@ -35,23 +35,25 @@ function CarCard({ car, onToggleFavorite }) {
         </svg>
       </div>
 
-      {/* Car Image - Click Here to Navigate */}
-      <div
-        className="car-image"
-        onClick={() => navigate(`/car/${car.id}`)} // Navigate only when clicking image
-        style={{
-          backgroundImage: `url(${car?.images[0]})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          cursor: "pointer" // Makes it clear that the image is clickable
-        }}
-        data-car-id={car.id}
-      ></div>
 
-      {/* Image Shadow Effect */}
+      <div className="car-image"
+     onClick={(e) => {
+       e.stopPropagation(); // Prevents event conflicts
+       navigate(`/car/${car.id}`);
+     }}
+     style={{
+       backgroundImage: `url(${car?.images[0]})`,
+       backgroundSize: "cover",
+       backgroundPosition: "center",
+       cursor: "pointer"
+     }}
+></div>
+
+
+
       <div className="shadow"></div>
 
-      {/* Specifications Grid */}
+
       <div className="specification">
         <div className="specification-gasoline">
           <div className="specification-gasoline-icon">
@@ -133,13 +135,11 @@ function CarCard({ car, onToggleFavorite }) {
       </div>
 
 
-      {/* Price Section */}
       <div className="price">
         <div className="price-amount">${car.price.toFixed(2)}</div>
         <div className="price-subtext">/ day</div>
       </div>
 
-      {/* Rent Button */}
       <button className="rental-button">
         <span className="rental-text">Rent Now</span>
       </button>

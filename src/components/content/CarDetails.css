@@ -1,21 +1,9 @@
-/* ===========================
-   1. Main Container Styles
-=========================== */
-
-
-/* ===========================
-   2. Navigation Bars
-=========================== */
 .car-details-content {
     display: flex;
     flex: 1;
     width: 100%;
 }
 
-
-/* ===========================
-   3. Car Details Header
-=========================== */
 .car-details-header {
     display: flex;
     width: 170px;
@@ -35,11 +23,6 @@
     text-align: left;
 }
 
-/* ===========================
-   4. Car View Section
-=========================== */
-
-/* View Container */
 .car-view-container {
     width: 492px;
     height: 360px;
@@ -54,7 +37,7 @@
     margin-top: 28px;
 }
 
-/* Title & Description */
+
 .car-title-container {
     display: inline-flex;
     flex-direction: column;
@@ -87,7 +70,6 @@
     letter-spacing: -0.32px;
 }
 
-/* Background & Rectangles */
 .car-details-bg {
     width: 758px;
     height: 360px;
@@ -128,7 +110,7 @@
     fill: rgba(255, 255, 255, 0.06);
 }
 
-/* Car Image */
+
 .car-details-image {
     width: 380px;
     height: 120px;
@@ -141,16 +123,13 @@
     bottom: 24px;
 }
 
-/* ===========================
-   5. View1 Container (Includes View 1, View 2, and View 3)
-=========================== */
 .view1-container {
     display: flex;
     align-items: center;
     margin-top: 24px;
 }
 
-/* ===== View 1 (Has Inner Structure) ===== */
+
 .view-1 {
     display: flex;
     align-items: center;
@@ -158,7 +137,7 @@
 
 
 .stroke {
-    padding: 5px; /* Keeps spacing even */
+    padding: 5px;
     transition: border 0.3s ease-in-out;
     display: flex;
     align-items: center;
@@ -170,15 +149,12 @@
 
 .stroke-selected {
     border: 2px solid var(--Primary-500, #3563E9);
-    border-radius: 8px; /* Optional rounded corners */
+    border-radius: 8px;
     width: 170px;
     height: 124px;
     margin-left: 32px;
 }
 
-
-
-/* View 1.1 - Inner Box */
 .view-1-1 {
     width: 132px;
     height: 108px;
@@ -191,7 +167,6 @@
     position: relative;
 }
 
-/* Background (SVG Pattern) */
 .bg {
     width: 188px;
     height: 120px;
@@ -201,7 +176,7 @@
     left: 0;
 }
 
-/* Thumbnail Image Inside View 1 */
+
 .car-details-image-thumb {
     height: auto;
     object-fit: cover;
@@ -211,27 +186,25 @@
     margin-right: 8px;
 }
 
-/* Proper Spacing Between Views */
+
 .view-2 {
-    margin-left: 24px; /* Ensures View 2 starts 24px after the stroke */
+    margin-left: 24px;
 }
 
 .view-3 {
-    margin-left: 24px; /* Ensures View 3 is 16px after View 2 */
+    margin-left: 24px;
 }
 
-/* Image inside View 2 and View 3 (Fully Filling the Container) */
+
 .view-2 img,
 .view-3 img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image fully fills the box */
-    border-radius: inherit; /* Ensures border radius applies properly */
+    object-fit: cover;
+    border-radius: inherit;
 }
 
-/* ===========================
-   5. Car Details Container (Right Side)
-=========================== */
+
 .detailcar-container {
     width: 492px;
     height: 508px;
@@ -246,7 +219,7 @@
     position: relative;
 }
 
-/* Car Name */
+
 .car-name-detail {
     display: flex;
     flex-direction: row;
@@ -257,7 +230,7 @@
     margin-top: 24px;
 }
 
-/* Car Name Text */
+
 .car-name-text-detail {
     display: flex;
     width: 220px;
@@ -269,7 +242,7 @@
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
-    line-height: 150%; /* 48px */
+    line-height: 150%;
     letter-spacing: -0.96px;
 }
 
@@ -281,7 +254,7 @@
     align-items: center;
     flex-shrink: 0;
     margin-left: 200px;
-    
+
 }
 
 .vuesax-heart-container svg {
@@ -289,15 +262,13 @@
     height: 24px;
     flex-shrink: 0;
 }
-/* ===========================
-   6. Reviews and Specs
-=========================== */
+
 .reviews-container {
     display: flex;
     height: 24px;
     align-items: center;
     gap: 8px;
-   
+
 }
 
 .review-stars {
@@ -320,13 +291,14 @@
     width: 16.744px;
     height: 15.967px;
     flex-shrink: 0;
-    fill: #FBAD39; /* Ensuring correct fill */
+    fill: #FBAD39;
 }
 
 .reviews {
     color: #6b6b6b;
     font-size: 14px;
 }
+
 .cardetailstextcontainer {
     width: 444px;
     color: var(--Secondary-400, #596780);
@@ -334,13 +306,13 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 200%; /* 40px */
+    line-height: 200%;
     letter-spacing: -0.4px;
     margin-left: 24px;
-   margin-top: 24px;
+    margin-top: 24px;
 }
 
-/* Car Specifications */
+
 .car-specs {
     display: flex;
     flex-direction: column;
@@ -349,7 +321,7 @@
     color: var(--Secondary-500, #1A202C);
 }
 
-/* Rent Now Button */
+
 .rental-button-detail {
     display: flex;
     width: 116px;
@@ -363,13 +335,13 @@
     background: var(--Primary-500, #3563E9);
     border: none;
     cursor: pointer;
-    position: absolute; /* Position it relative to the parent */
+    position: absolute;
     top: 425px;
-    right: 24px; /* Align with the left margin */
-  }
-  
-  /* Rent Now Text */
-  .rental-text-detail {
+    right: 24px;
+}
+
+
+.rental-text-detail {
     display: flex;
     width: 76px;
     height: 24px;
@@ -382,20 +354,21 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
-    line-height: 150%; /* 24px */
+    line-height: 150%;
     letter-spacing: -0.32px;
-  }
-  .price-detail {
-    display: flex; /* Use flexbox to align items horizontally */
+}
+
+.price-detail {
+    display: flex;
     justify-content: center;
-    gap: 4px; /* Space between price and subtext */
+    gap: 4px;
     flex-shrink: 0;
-    position: absolute; /* Position it relative to the parent */
-    bottom: 44px; /* Adjust this value as needed */
-    left: 24px; /* Align with the left margin */
-  }
-  
-  .price-amount-detail {
+    position: absolute;
+    bottom: 44px;
+    left: 24px;
+}
+
+.price-amount-detail {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -405,9 +378,9 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-  }
-  
-  .price-subtext-detail {
+}
+
+.price-subtext-detail {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -417,11 +390,8 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-  }
-  
-/* ===========================
-   8. Specifications Section
-=========================== */
+}
+
 .specifications-container {
     display: inline-flex;
     align-items: flex-start;
@@ -430,21 +400,25 @@
     margin-top: 32px;
 }
 
-.spec1, .spec2 {
+.spec1,
+.spec2 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
 }
 
-/* Type and Steering */
-.type, .steering {
+.type,
+.steering {
     display: flex;
     align-items: flex-start;
     gap: 16px;
 }
 
-.type .label, .steering .label, .capacity .label, .gasoline .label {
+.type .label,
+.steering .label,
+.capacity .label,
+.gasoline .label {
     display: flex;
     width: 92px;
     height: 28px;
@@ -455,11 +429,14 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 150%; /* 30px */
+    line-height: 150%;
     letter-spacing: -0.4px;
 }
 
-.type .value, .steering .value, .capacity .value, .gasoline .value {
+.type .value,
+.steering .value,
+.capacity .value,
+.gasoline .value {
     display: flex;
     width: 92px;
     height: 28px;
@@ -471,12 +448,12 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
-    line-height: 150%; /* 30px */
+    line-height: 150%;
     letter-spacing: -0.4px;
 }
 
-/* Capacity and Gasoline */
-.capacity, .gasoline {
+.capacity,
+.gasoline {
     display: flex;
     align-items: flex-start;
     gap: 16px;

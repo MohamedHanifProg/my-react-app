@@ -1,24 +1,16 @@
-
-/* Wrapper for the NavBarTop */
 .navbar-top {
   width: 100%px;
   height: 124px;
   flex-shrink: 0;
   border: 1px solid rgba(195, 212, 233, 0.40);
-  background: var(--Primary-0, #FFF); /* Primary/0 */
-  
-  /* Use position: relative to allow absolute-positioned children */
+  background: var(--Primary-0, #FFF);
   position: relative;
-  
-  /* Flex alignment for the search & like button (which are not absolute) */
   display: flex;
-  justify-content: flex-end; /* right-align the search and like button */
+  justify-content: flex-end;
   align-items: center;
-  
   box-sizing: border-box;
 }
 
-/* Brand Name - placed absolutely 40px from top, 40px from left */
 .navbar-brand {
   position: absolute;
   top: 40px;
@@ -29,7 +21,7 @@
   font-size: 32px;
   font-weight: 700;
   color: var(--Primary-500, #3563E9);
-  line-height: 150%; /* ~48px */
+  line-height: 150%;
   letter-spacing: -0.96px;
 }
 
@@ -37,12 +29,11 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  position: absolute; /* Add absolute positioning */
-  left: 357px; /* 381px from left of container */
-  top: 40px; /* Align vertically with brand */
+  position: absolute;
+  left: 357px;
+  top: 40px;
 }
 
-/* Search Button */
 .search-button {
   display: flex;
   align-items: center;
@@ -50,24 +41,22 @@
   height: 44px;
   border-radius: 70px;
   border: 1px solid rgba(195, 212, 233, 0.40);
-  background: var(--Primary-0, #FFF); /* Primary/0 */
+  background: var(--Primary-0, #FFF);
   padding: 0 16px;
   box-sizing: border-box;
 }
 
-/* Search Text */
 .search-text {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 16px;
   font-weight: 500;
   color: var(--Secondary-400, #596780);
-  line-height: 150%; /* 24px */
+  line-height: 150%;
   letter-spacing: -0.32px;
-  flex: 1; /* Push icon to the right */
+  flex: 1;
   text-align: justify;
 }
 
-/* Search Icon */
 .search-icon {
   display: flex;
   justify-content: center;
@@ -81,22 +70,20 @@
   height: 24px;
 }
 
-/* Update the .like-container */
 .like-container {
-display: flex;
-justify-content: center;
-align-items: center;
-width: 44px;
-height: 44px;
-border-radius: 90px;
-border: 1px solid rgba(195, 212, 233, 0.40);
-background: #C3D4E966;
-position: absolute; /* Add absolute positioning */
-right: 30px; /* 30px from right */
-top: 40px; /* 40px from top */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 90px;
+  border: 1px solid rgba(195, 212, 233, 0.40);
+  background: #C3D4E966;
+  position: absolute;
+  right: 30px;
+  top: 40px;
 }
 
-/* Like Button */
 .like-button {
   display: flex;
   justify-content: center;
@@ -108,5 +95,5 @@ top: 40px; /* 40px from top */
 .like-button svg {
   width: 24px;
   height: 24px;
-  fill: #596780; /* Heart color */
+  fill: #596780;
 }

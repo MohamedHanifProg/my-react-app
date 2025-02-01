@@ -3,7 +3,7 @@ import CarsCatalogue from "../components/content/CarsCatalogue";
 import Layout from "../components/layout/Layout";
 import carsData from "../data/cars.json";
 
-function HomePage({ favoriteCars, toggleFavorite, showFavorites, setShowFavorites }) { // Destructure new props
+function HomePage({ favoriteCars, toggleFavorite, showFavorites, setShowFavorites }) { 
   const minPrice = Math.min(...carsData.map((car) => car.price));
   const maxPrice = Math.max(...carsData.map((car) => car.price));
 
@@ -15,7 +15,7 @@ function HomePage({ favoriteCars, toggleFavorite, showFavorites, setShowFavorite
     priceRange: [minPrice, maxPrice],
   });
 
-  // useEffect remains the same but uses showFavorites from props
+  
   useEffect(() => {
     let result = [...carsData];
     if (searchQuery.length >= 2) {
@@ -23,7 +23,7 @@ function HomePage({ favoriteCars, toggleFavorite, showFavorites, setShowFavorite
         car.name.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
-    if (showFavorites) { // Uses prop instead of local state
+    if (showFavorites) { 
       result = result.filter((car) => favoriteCars.has(car.id));
     }
     result = result.filter(
@@ -40,8 +40,8 @@ function HomePage({ favoriteCars, toggleFavorite, showFavorites, setShowFavorite
     <Layout
       navProps={{ 
         onSearch: setSearchQuery, 
-        onToggleFavorites: setShowFavorites, // Pass the state setter from App.js
-        showFavorites // Pass the state value from App.js
+        onToggleFavorites: setShowFavorites, 
+        showFavorites 
       }}
       sideProps={{
         cars: carsData,

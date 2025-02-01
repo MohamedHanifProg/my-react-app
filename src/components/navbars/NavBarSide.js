@@ -1,15 +1,13 @@
-// NavBarSide.jsx
 import React from "react";
 import "./NavBarSide.css";
 
 function NavBarSide({
   cars = [],
-  onFilterChange = () => {},
+  onFilterChange = () => { },
   selectedFilters = { types: [], capacities: [], priceRange: [0, 0] },
   minPrice = 0,
   maxPrice = 100,
 }) {
-  // Calculate dynamic counts based on ALL cars
   const typeCounts = cars.reduce((acc, car) => {
     acc[car.type] = (acc[car.type] || 0) + 1;
     return acc;
@@ -26,7 +24,7 @@ function NavBarSide({
       ? currentTypes.filter((t) => t !== type)
       : [...currentTypes, type];
 
-    onFilterChange({ 
+    onFilterChange({
       ...selectedFilters,
       types: newTypes.length > 0 ? newTypes : Object.keys(typeCounts),
     });
@@ -48,13 +46,12 @@ function NavBarSide({
     const newMaxPrice = parseFloat(e.target.value);
     onFilterChange({
       ...selectedFilters,
-      priceRange: [minPrice, newMaxPrice], // Keep min fixed, only change max
+      priceRange: [minPrice, newMaxPrice],
     });
   };
 
   return (
     <div className="navbar-side">
-      {/* Filter by Type */}
       <div className="navbar-section">
         <div className="navbar-section-title">T Y P E</div>
         <div className="navbar-item-list">
@@ -73,8 +70,6 @@ function NavBarSide({
           ))}
         </div>
       </div>
-
-      {/* Filter by Capacity */}
       <div className="navbar-section">
         <div className="navbar-section-title">C A P A C I T Y</div>
         <div className="navbar-item-list">
@@ -93,8 +88,6 @@ function NavBarSide({
           ))}
         </div>
       </div>
-
-      {/* Filter by Price Range */}
       <div className="navbar-section">
         <div className="navbar-section-title">P R I C E ( P E R  D A Y )</div>
         <div className="navbar-price-range">

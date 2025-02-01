@@ -19,15 +19,15 @@ function NavBarTop({ onSearch, onToggleFavorites, showFavorites }) {
 
   const handleToggleFavorites = () => {
     if (onToggleFavorites) {
-      console.log("Toggling Favorites. Current state:", showFavorites);
-      onToggleFavorites(!showFavorites);
+        onToggleFavorites(!showFavorites);
+        navigate("/"); // Ensures returning to homepage to see favorites
     }
-  };
+};
+
 
   return (
     <div className="navbar-top">
-      {/* Brand Logo */}
-      <div 
+      <div
         className="navbar-brand"
         onClick={() => navigate('/')}
         role="button"
@@ -36,8 +36,6 @@ function NavBarTop({ onSearch, onToggleFavorites, showFavorites }) {
       >
         ShenCarCar
       </div>
-
-      {/* Search Bar */}
       <div className="navbar-search">
         <div className="search-button">
           <input
@@ -76,19 +74,18 @@ function NavBarTop({ onSearch, onToggleFavorites, showFavorites }) {
         </div>
       </div>
 
-      {/* Favorites Button */}
-      <div 
-        className="like-container" 
+      <div
+        className="like-container"
         onClick={handleToggleFavorites}
         role="button"
         tabIndex={0}
       >
         <div className="like-button">
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            width="24" 
-            height="24" 
-            viewBox="0 0 24 24" 
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
             fill={showFavorites ? "#ED3F3F" : "#596780"}
           >
             <path

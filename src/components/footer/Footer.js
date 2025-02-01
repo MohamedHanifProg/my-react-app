@@ -3,24 +3,22 @@ import { useNavigate } from 'react-router-dom'; // ניווט
 import './Footer.css';
 
 function Footer() {
-  const navigate = useNavigate(); // אתחול הניווט
+  const navigate = useNavigate(); 
 
   return (
     <footer className="footer">
-      {/* קו מפריד */}
       <div className="footer-line"></div>
 
       <div 
         className="footer-logo"
-        onClick={() => navigate('/')} // Navigate to HomePage
-        style={{ cursor: "pointer" }} // Indicate it's clickable
+        onClick={() => navigate('/')} 
+        style={{ cursor: "pointer" }} 
       >
         <h2 className="footer-logo-title">ShenCarCar</h2>
         <p className="footer-logo-description">
           Your reliable source for car rentals and more.
         </p>
       </div>
-      {/* קישורים לא פעילים */}
       <div className="footer-about footer-section">
         <h3 className="footer-section-title">About</h3>
         <div className="footer-section-content">
@@ -48,12 +46,10 @@ function Footer() {
         </div>
       </div>
 
-      {/* זכויות יוצרים */}
       <div className="footer-copyright">
         ©2025 ShenCarCar
       </div>
 
-      {/* פרטיות ותנאים */}
       <div className="footer-privacy">
         Privacy &amp; Policy
       </div>

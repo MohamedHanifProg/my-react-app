@@ -1,24 +1,10 @@
-/* 
-  From the previous step, we already defined color variables
-  and the main container. 
-  We'll just add new classes for the two text elements here.
-*/
-
 :root {
-  /* Primary/0 */
   --Primary-0: #FFFFFF;
-  /* Primary/500 */
   --Primary-500: #3563E9;
-  /* Secondary/300 */
   --Secondary-300: #90A3BF;
-  /* Secondary/500 */
   --Secondary-500: #1A202C;
-  /* White transparent & white */
   --White-Transparent: #FFFFFF00;
-  /* 0% */
   --White: #FFFFFF;
-  /* 100% */
-  /* Additional color e.g. #ED3F3F */
   --Error: #ED3F3F;
 }
 
@@ -29,16 +15,13 @@
   overflow-y: hidden;
 }
 
-/* Wrapper for the two text items */
 .catalogue-header {
   display: flex;
   align-items: center;
   gap: 2px;
-  /* space between "Cars Catalogue" and "86 Cars" */
   margin-bottom: 28px;
 }
 
-/* “Cars Catalogue” text */
 .catalogue-title {
   display: flex;
   width: 170px;
@@ -54,11 +37,9 @@
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
-  /* 30px */
   letter-spacing: -0.6px;
 }
 
-/* “86 Cars” text */
 .catalogue-count {
   display: flex;
   width: 61px;
@@ -69,17 +50,14 @@
   margin-top: 30px;
   color: var(--Secondary-300, #90A3BF);
   text-align: center;
-
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
-  /* 21px */
   letter-spacing: -0.28px;
 }
 
-/* Layout for Catalog 1 */
 .catalog-card {
   display: flex;
   align-items: flex-start;
@@ -88,30 +66,22 @@
   width: 317px;
   height: 388px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  /* Optional shadow */
   flex-direction: column;
-  /* Ensure vertical layout inside the card */
   position: relative;
-  /* Set relative positioning for absolute adjustments */
-
   margin-left: 32px;
-  /* 32px from the left */
 
 }
 
-/* Car Name Container */
 .car-name {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
   margin-left: 24px;
-  /* 24px from the left */
   margin-top: 24px;
 
 }
 
-/* First Text (e.g., "Koenigsegg") */
 .car-name-title {
   display: flex;
   width: 128px;
@@ -124,11 +94,9 @@
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
-  /* 30px */
   letter-spacing: -0.6px;
 }
 
-/* Second Text (e.g., "Sport") */
 .car-name-type {
   display: flex;
   width: 128px;
@@ -141,11 +109,9 @@
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
-  /* 21px */
   letter-spacing: -0.28px;
 }
 
-/* Vuesax Container */
 .vuesax {
   display: flex;
   width: 24px;
@@ -154,21 +120,16 @@
   align-items: center;
   flex-shrink: 0;
   position: absolute;
-  /* To position it relative to the card */
   top: 24px;
-  /* 24px from the top */
   right: 24px;
-  /* 24px from the right */
 }
 
-/* Heart SVG */
 .vuesax-heart {
   width: 24px;
   height: 24px;
   flex-shrink: 0;
 }
 
-/* Base styles for all car images */
 .car-image {
   position: absolute;
   background-size: cover;
@@ -180,7 +141,6 @@
   z-index: 2;
 }
 
-/* Car 4 - Ford Mustang */
 .car-image[data-car-id="4"] {
   width: 252px;
   height: 112px;
@@ -188,7 +148,6 @@
   top: 118px;
 }
 
-/* Car 5 - BMW X5 */
 .car-image[data-car-id="5"] {
   width: 254px;
   height: 102px;
@@ -196,7 +155,6 @@
   top: 122px;
 }
 
-/* Car 6 - Audi A4 */
 .car-image[data-car-id="6"] {
   width: 252px;
   height: 112px;
@@ -204,7 +162,6 @@
   top: 120px;
 }
 
-/* Cars 7 & 9 - Porsche 911 & Jeep Wrangler */
 .car-image[data-car-id="7"],
 .car-image[data-car-id="9"] {
   width: 264px;
@@ -213,7 +170,6 @@
   top: 126px;
 }
 
-/* Car 8 - Honda Civic */
 .car-image[data-car-id="8"] {
   width: 308px;
   height: 120px;
@@ -221,20 +177,16 @@
   top: 116px;
 }
 
-/* Shadow Element */
 .shadow {
   width: 264px;
   height: 66px;
   flex-shrink: 0;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFF 100%);
   position: absolute;
-  /* Position it relative to the parent */
   top: 42px;
-  /* 166px from the top */
   left: 4px;
-  /* 26px from the left */
   z-index: 1;
-  /* Ensure it appears above other elements */
+
 }
 
 .specification {
@@ -242,23 +194,18 @@
   align-items: flex-start;
   gap: 17px;
   margin-left: 24px;
-  /* Matches left margin alignment */
   position: absolute;
-  /* Position it relative to the parent */
   top: calc(124px + 84px + 52px);
-  /* 52px below the car image */
   z-index: 2;
-  /* Ensure it appears above other elements */
+
 }
 
-/* Gasoline Container */
 .specification-gasoline {
   display: flex;
   align-items: flex-start;
   gap: 8px;
 }
 
-/* Vuesax Icon for Gasoline */
 .specification-gasoline-icon {
   display: flex;
   width: 24px;
@@ -267,14 +214,12 @@
   align-items: center;
 }
 
-/* Gasoline SVG */
 .specification-gasoline-svg {
   width: 24px;
   height: 24px;
   flex-shrink: 0;
 }
 
-/* Gasoline Text */
 .specification-gasoline-text {
   display: flex;
   width: 28px;
@@ -287,25 +232,21 @@
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
-  /* 21px */
   letter-spacing: -0.28px;
 }
 
-/* Car Specification */
 .specification-car {
   display: flex;
   align-items: flex-start;
   gap: 8px;
 }
 
-/* Car SVG */
 .specification-car-svg {
   width: 24px;
   height: 24px;
   flex-shrink: 0;
 }
 
-/* Car Text */
 .specification-car-text {
   display: flex;
   width: 52px;
@@ -318,18 +259,15 @@
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
-  /* 21px */
   letter-spacing: -0.28px;
 }
 
-/* Capacity Specification */
 .specification-capacity {
   display: flex;
   align-items: flex-start;
   gap: 7px;
 }
 
-/* Vuesax Icon for Capacity */
 .specification-capacity-icon {
   display: flex;
   width: 24px;
@@ -338,14 +276,12 @@
   align-items: center;
 }
 
-/* Capacity SVG */
 .specification-capacity-svg {
   width: 24px;
   height: 24px;
   flex-shrink: 0;
 }
 
-/* Capacity Text */
 .specification-capacity-text {
   display: flex;
   width: 60px;
@@ -358,11 +294,9 @@
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
-  /* 21px */
   letter-spacing: -0.28px;
 }
 
-/* Rent Now Button */
 .rental-button {
   display: flex;
   width: 116px;
@@ -377,14 +311,11 @@
   border: none;
   cursor: pointer;
   position: absolute;
-  /* Position it relative to the parent */
   top: 320px;
-  /* Adjust this value as needed */
   right: 24px;
-  /* Align with the left margin */
+
 }
 
-/* Rent Now Text */
 .rental-text {
   display: flex;
   width: 76px;
@@ -399,23 +330,18 @@
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
-  /* 24px */
   letter-spacing: -0.32px;
 }
 
 .price {
   display: flex;
-  /* Use flexbox to align items horizontally */
   justify-content: center;
   gap: 4px;
-  /* Space between price and subtext */
   flex-shrink: 0;
   position: absolute;
-  /* Position it relative to the parent */
   bottom: 36px;
-  /* Adjust this value as needed */
   left: 24px;
-  /* Align with the left margin */
+
 }
 
 .price-amount {
@@ -445,7 +371,6 @@
 .cars-grid {
   display: grid;
   grid-template-columns: repeat(3, 317px);
-  /* 3 cards per row */
   gap: 32px;
   margin-bottom: 32px;
 

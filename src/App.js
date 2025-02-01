@@ -5,7 +5,7 @@ import CarDetailsPage from "./pages/CarDetailsPage";
 
 function App() {
   const [favoriteCars, setFavoriteCars] = useState(new Set());
-  const [showFavorites, setShowFavorites] = useState(false); // Add this line
+  const [showFavorites, setShowFavorites] = useState(false);
 
   const toggleFavorite = (carId) => {
     setFavoriteCars((prevFavorites) => {
@@ -18,28 +18,28 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route 
-          path="/" 
+        <Route
+          path="/"
           element={
-            <HomePage 
-              favoriteCars={favoriteCars} 
+            <HomePage
+              favoriteCars={favoriteCars}
               toggleFavorite={toggleFavorite}
               showFavorites={showFavorites}
               setShowFavorites={setShowFavorites}
             />
-          } 
+          }
         />
-      <Route 
-  path="/car/:id" 
-  element={
-    <CarDetailsPage 
-      favoriteCars={favoriteCars} 
-      toggleFavorite={toggleFavorite}
-      showFavorites={showFavorites}
-      setShowFavorites={setShowFavorites} // ✅ Pass this!
-    />
-  } 
-/>
+        <Route
+          path="/car/:id"
+          element={
+            <CarDetailsPage
+              favoriteCars={favoriteCars}
+              toggleFavorite={toggleFavorite}
+              showFavorites={showFavorites}
+              setShowFavorites={setShowFavorites}
+            />
+          }
+        />
 
       </Routes>
     </Router>
