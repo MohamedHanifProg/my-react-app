@@ -19,17 +19,22 @@ function NavBarTop({ onSearch, onToggleFavorites, showFavorites }) {
 
   const handleToggleFavorites = () => {
     if (onToggleFavorites) {
-        onToggleFavorites(!showFavorites);
-        navigate("/"); // Ensures returning to homepage to see favorites
+      onToggleFavorites(!showFavorites);
+      navigate("/");  // Ensure redirection to homepage
+    
     }
-};
+  };
+  
 
 
   return (
     <div className="navbar-top">
       <div
         className="navbar-brand"
-        onClick={() => navigate('/')}
+        onClick={() => {
+          navigate('/');
+          window.location.reload(); // Force page reload
+        }}
         role="button"
         tabIndex={0}
         style={{ cursor: "pointer" }}

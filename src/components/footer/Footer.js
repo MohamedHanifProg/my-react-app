@@ -11,7 +11,10 @@ function Footer() {
 
       <div 
         className="footer-logo"
-        onClick={() => navigate('/')} 
+        onClick={() => {
+          navigate('/');
+          window.location.reload(); // Force page reload
+        }}
         style={{ cursor: "pointer" }} 
       >
         <h2 className="footer-logo-title">ShenCarCar</h2>
