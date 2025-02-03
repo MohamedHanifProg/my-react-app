@@ -14,8 +14,6 @@ function CarCard({ car, onToggleFavorite }) {
         <div className="car-name-title">{car.name}</div>
         <div className="car-name-type">{car.type}</div>
       </div>
-
-
       <div className="vuesax" onClick={(e) => {
         e.stopPropagation();
         onToggleFavorite(car.id);
@@ -35,25 +33,20 @@ function CarCard({ car, onToggleFavorite }) {
           <path d="M16.44 3.10001C14.63 3.10001 13.01 3.98001 12 5.33001C10.99 3.98001 9.37 3.10001 7.56 3.10001C4.49 3.10001 2 5.60001 2 8.69001C2 9.88001 2.19 10.98 2.52 12C4.1 17 8.97 19.99 11.38 20.81C11.72 20.93 12.28 20.93 12.62 20.81C15.03 19.99 19.9 17 21.48 12C21.81 10.98 22 9.88001 22 8.69001C22 5.60001 19.51 3.10001 16.44 3.10001Z" />
         </svg>
       </div>
-
-
       <div
-  className="car-image"
-  data-car-id={car.id} // Ensure the attribute is correctly set
-  onClick={(e) => {
-    e.stopPropagation();
-    navigate(`/car/${car.id}`);
-  }}
-  style={{
-    backgroundImage: `url(${car?.images[0]})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    cursor: "pointer",
-  }}
-></div>
-
-
-
+        className="car-image"
+        data-car-id={car.id}
+        onClick={(e) => {
+          e.stopPropagation();
+          navigate(`/car/${car.id}`);
+        }}
+        style={{
+          backgroundImage: `url(${car?.images[0]})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          cursor: "pointer",
+        }}
+      ></div>
       <div className="shadow"></div>
 
 

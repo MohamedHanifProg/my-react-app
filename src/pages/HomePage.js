@@ -1,51 +1,40 @@
 import React, { useState, useEffect } from "react";
 import CarsCatalogue from "../components/content/CarsCatalogue";
 import Layout from "../components/layout/Layout";
-import carsData from "../data/cars.json";
+import { useLocation } from "react-router-dom";
 
-function HomePage({ favoriteCars, toggleFavorite, showFavorites, setShowFavorites }) { 
-  const minPrice = Math.min(...carsData.map((car) => car.price));
-  const maxPrice = Math.max(...carsData.map((car) => car.price));
+function HomePage({ carsData, favoriteCars, toggleFavorite }) {
+  const location = useLocation();
 
-  const allTypes = [...new Set(carsData.map((car) => car.type))]; 
-  const allCapacities = [...new Set(carsData.map((car) => car.capacity))];
+  const allTypes = [...new Set(carsData.map(car => car.type))];
+  const allCapacities = [...new Set(carsData.map(car => car.capacity))];
+
+  const minPrice = Math.min(...carsData.map(car => car.price));
+  const maxPrice = Math.max(...carsData.map(car => car.price));
 
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredCars, setFilteredCars] = useState(carsData);
   const [selectedFilters, setSelectedFilters] = useState({
-    types: allTypes,  
-    capacities: allCapacities,  
-    priceRange: [minPrice, maxPrice], 
+    types: allTypes,
+    capacities: allCapacities,
+    priceRange: [minPrice, maxPrice],
   });
 
   useEffect(() => {
-    let result = [...carsData];
-
-    if (searchQuery.length >= 2) {
-      result = result.filter((car) =>
-        car.name.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-    }
-    if (showFavorites) { 
-      result = result.filter((car) => favoriteCars.has(car.id));
-    }
-    result = result.filter(
+    let result = carsData.filter(
       (car) =>
-        (selectedFilters.types.length === 0 || selectedFilters.types.includes(car.type)) &&
-        (selectedFilters.capacities.length === 0 || selectedFilters.capacities.includes(car.capacity)) &&
+        car.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
+        selectedFilters.types.includes(car.type) &&
+        selectedFilters.capacities.includes(car.capacity) &&
         car.price >= selectedFilters.priceRange[0] &&
         car.price <= selectedFilters.priceRange[1]
     );
     setFilteredCars(result);
-  }, [searchQuery, showFavorites, selectedFilters, favoriteCars]);
+  }, [searchQuery, selectedFilters, carsData, location]);
 
   return (
     <Layout
-      navProps={{ 
-        onSearch: setSearchQuery, 
-        onToggleFavorites: setShowFavorites, 
-        showFavorites 
-      }}
+      navProps={{ onSearch: setSearchQuery }}
       sideProps={{
         cars: carsData,
         onFilterChange: setSelectedFilters,

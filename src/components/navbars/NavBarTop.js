@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './NavBarTop.css';
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import "./NavBarTop.css";
 
-function NavBarTop({ onSearch, onToggleFavorites, showFavorites }) {
+function NavBarTop({ onSearch }) {
   const navigate = useNavigate();
-  const [searchValue, setSearchValue] = useState('');
+  const location = useLocation();
+  const [searchValue, setSearchValue] = useState("");
+  const [lastPage, setLastPage] = useState("/");
 
   useEffect(() => {
     const debounceTimer = setTimeout(() => {
@@ -17,24 +19,29 @@ function NavBarTop({ onSearch, onToggleFavorites, showFavorites }) {
     setSearchValue(e.target.value);
   };
 
-  const handleToggleFavorites = () => {
-    if (onToggleFavorites) {
-      onToggleFavorites(!showFavorites);
-      navigate("/");  // Ensure redirection to homepage
-    
+  const handleLogoClick = () => {
+    if (location.pathname === "/") {
+      window.dispatchEvent(new Event("homepage-refresh"));
+    } else {
+      navigate("/", { replace: true });
     }
   };
-  
 
+  const handleFavoritesClick = () => {
+    if (location.pathname === "/favorites") {
+      navigate(lastPage);
+    } else {
+      setLastPage(location.pathname);
+      navigate("/favorites");
+    }
+  };
 
   return (
     <div className="navbar-top">
+
       <div
         className="navbar-brand"
-        onClick={() => {
-          navigate('/');
-          window.location.reload(); // Force page reload
-        }}
+        onClick={handleLogoClick}
         role="button"
         tabIndex={0}
         style={{ cursor: "pointer" }}
@@ -50,11 +57,11 @@ function NavBarTop({ onSearch, onToggleFavorites, showFavorites }) {
             value={searchValue}
             onChange={handleSearchInput}
             style={{
-              border: 'none',
-              background: 'transparent',
-              outline: 'none',
-              width: '100%',
-              paddingRight: '40px'
+              border: "none",
+              background: "transparent",
+              outline: "none",
+              width: "100%",
+              paddingRight: "40px",
             }}
             aria-label="Search car by name"
           />
@@ -78,10 +85,9 @@ function NavBarTop({ onSearch, onToggleFavorites, showFavorites }) {
           </div>
         </div>
       </div>
-
       <div
         className="like-container"
-        onClick={handleToggleFavorites}
+        onClick={handleFavoritesClick}
         role="button"
         tabIndex={0}
       >
@@ -91,7 +97,7 @@ function NavBarTop({ onSearch, onToggleFavorites, showFavorites }) {
             width="24"
             height="24"
             viewBox="0 0 24 24"
-            fill={showFavorites ? "#ED3F3F" : "#596780"}
+            fill={location.pathname === "/favorites" ? "#ED3F3F" : "#596780"}
           >
             <path
               d="M16.44 3.1C14.63 3.1 13.01 3.98 12 5.33C10.99 3.98 9.37 3.1 7.56 3.1C4.49 3.1 2 5.6 2 8.69C2 9.88 2.19 10.98 2.52 12C4.1 17 8.97 19.99 11.38 20.81C11.72 20.93 12.28 20.93 12.62 20.81C15.03 19.99 19.9 17 21.48 12C21.81 10.98 22 9.88 22 8.69C22 5.6 19.51 3.1 16.44 3.1Z"

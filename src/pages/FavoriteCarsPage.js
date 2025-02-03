@@ -1,19 +1,31 @@
 import React from "react";
-import CarsCatalogue from "../components/content/CarsCatalogue";
 import Layout from "../components/layout/Layout";
+import CarsCatalogue from "../components/content/CarsCatalogue";
 
-function FavoriteCarsPage({ favoriteCars, toggleFavorite }) {
+function FavoriteCarsPage({ carsData, favoriteCars, toggleFavorite }) {
+  const favoriteCarsList = carsData.filter((car) => favoriteCars.has(car.id));
+
   return (
-    <Layout navProps={{ showFavorites: true }}>
-      <h1 className="page-title">Favorite Cars</h1>
-      {favoriteCars.size > 0 ? (
-        <CarsCatalogue
-          cars={[...favoriteCars]} 
-          onToggleFavorite={toggleFavorite}
-        />
-      ) : (
-        <p className="no-favorites">No favorite cars yet.</p>
-      )}
+    <Layout
+      navProps={{}}
+      sideProps={{
+        cars: carsData,
+        onFilterChange: () => { },
+        selectedFilters: {
+          types: [],
+          capacities: [],
+          priceRange: [0, 0],
+        },
+      }}
+    >
+      <CarsCatalogue
+        title="Favorite Cars"
+        cars={favoriteCarsList.map((car) => ({
+          ...car,
+          isFavorite: true,
+        }))}
+        onToggleFavorite={toggleFavorite}
+      />
     </Layout>
   );
 }

@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import CarDetailsPage from "./pages/CarDetailsPage";
+import FavoriteCarsPage from "./pages/FavoriteCarsPage";
+import carsData from "./data/cars.json";
 
 function App() {
   const [favoriteCars, setFavoriteCars] = useState(new Set());
-  const [showFavorites, setShowFavorites] = useState(false);
-
   const toggleFavorite = (carId) => {
     setFavoriteCars((prevFavorites) => {
       const newFavorites = new Set(prevFavorites);
@@ -20,27 +20,16 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={
-            <HomePage
-              favoriteCars={favoriteCars}
-              toggleFavorite={toggleFavorite}
-              showFavorites={showFavorites}
-              setShowFavorites={setShowFavorites}
-            />
-          }
+          element={<HomePage carsData={carsData} favoriteCars={favoriteCars} toggleFavorite={toggleFavorite} />}
         />
         <Route
           path="/car/:id"
-          element={
-            <CarDetailsPage
-              favoriteCars={favoriteCars}
-              toggleFavorite={toggleFavorite}
-              showFavorites={showFavorites}
-              setShowFavorites={setShowFavorites}
-            />
-          }
+          element={<CarDetailsPage favoriteCars={favoriteCars} toggleFavorite={toggleFavorite} />}
         />
-
+        <Route
+          path="/favorites"
+          element={<FavoriteCarsPage carsData={carsData} favoriteCars={favoriteCars} toggleFavorite={toggleFavorite} />}
+        />
       </Routes>
     </Router>
   );

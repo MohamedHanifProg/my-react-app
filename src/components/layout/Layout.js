@@ -17,5 +17,4 @@ function Layout({ children, navProps, sideProps }) {
     </div>
   );
 }
-
 export default Layout;

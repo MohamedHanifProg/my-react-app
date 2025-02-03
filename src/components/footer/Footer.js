@@ -1,21 +1,20 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // ניווט
+import { useNavigate } from 'react-router-dom';
 import './Footer.css';
 
 function Footer() {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   return (
     <footer className="footer">
       <div className="footer-line"></div>
-
-      <div 
+      <div
         className="footer-logo"
         onClick={() => {
           navigate('/');
-          window.location.reload(); // Force page reload
+          window.location.reload();
         }}
-        style={{ cursor: "pointer" }} 
+        style={{ cursor: "pointer" }}
       >
         <h2 className="footer-logo-title">ShenCarCar</h2>
         <p className="footer-logo-description">

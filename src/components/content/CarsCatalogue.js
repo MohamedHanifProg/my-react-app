@@ -1,12 +1,11 @@
 import React from "react";
 import CarCard from "./CarCard";
 
-
-function CarsCatalogue({ cars = [], onToggleFavorite, onCarClick }) {
+function CarsCatalogue({ cars = [], onToggleFavorite, title = "Cars Catalogue" }) {
   return (
     <div className="cars-catalogue">
       <div className="catalogue-header">
-        <div className="catalogue-title">Cars Catalogue</div>
+        <div className="catalogue-title">{title}</div>
         <div className="catalogue-count">{cars.length} Cars</div>
       </div>
       <div className="cars-grid">
@@ -15,13 +14,11 @@ function CarsCatalogue({ cars = [], onToggleFavorite, onCarClick }) {
             key={car.id}
             car={car}
             onToggleFavorite={onToggleFavorite}
-            onCarClick={onCarClick} // Pass down click event
           />
         ))}
       </div>
     </div>
   );
 }
-
 
 export default CarsCatalogue;

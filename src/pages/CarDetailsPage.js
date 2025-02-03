@@ -5,11 +5,9 @@ import NavBarSide from "../components/navbars/NavBarSide";
 import Footer from "../components/footer/Footer";
 import carsData from "../data/cars.json";
 import "../components/content/CarDetails.css";
-import { useNavigate } from "react-router-dom"; 
 
 function CarDetailsPage({ favoriteCars, toggleFavorite, showFavorites, setShowFavorites }) {
     const { id } = useParams();
-    const navigate = useNavigate(); 
     const [selectedCar, setSelectedCar] = useState(null);
     const [favorite, setFavorite] = useState(false);
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -17,7 +15,7 @@ function CarDetailsPage({ favoriteCars, toggleFavorite, showFavorites, setShowFa
     useEffect(() => {
         const carId = parseInt(id, 10);
         const foundCar = carsData.find(car => car.id === carId);
-    
+
         if (foundCar) {
             setSelectedCar(foundCar);
             setFavorite(favoriteCars.has(foundCar.id));
@@ -25,8 +23,8 @@ function CarDetailsPage({ favoriteCars, toggleFavorite, showFavorites, setShowFa
             console.error(`Car with ID ${carId} not found`);
             setSelectedCar(null);
         }
-    }, [id, favoriteCars]); 
-    
+    }, [id, favoriteCars]);
+
     const toggleFavoriteStatus = () => {
         toggleFavorite(selectedCar.id);
         setFavorite(!favorite);
@@ -55,7 +53,6 @@ function CarDetailsPage({ favoriteCars, toggleFavorite, showFavorites, setShowFa
                     minPrice={0}
                     maxPrice={0}
                 />
-
                 <div className="car-details-main">
                     <h1 className="car-details-header">Car Details</h1>
 
@@ -82,7 +79,6 @@ function CarDetailsPage({ favoriteCars, toggleFavorite, showFavorites, setShowFa
                             </div>
                         </div>
                     </div>
-
                     <div className="view1-container">
                         <div
                             className={`view-1 ${selectedImageIndex === 0 ? "stroke-selected" : ""}`}
@@ -99,7 +95,6 @@ function CarDetailsPage({ favoriteCars, toggleFavorite, showFavorites, setShowFa
                                 </div>
                             </div>
                         </div>
-
                         <div
                             className={`view-2 ${selectedImageIndex === 1 ? "stroke-selected" : ""}`}
                             onClick={() => handleImageClick(1)}
@@ -110,7 +105,6 @@ function CarDetailsPage({ favoriteCars, toggleFavorite, showFavorites, setShowFa
                                 onError={(e) => { e.target.src = "/assets/default.jpg"; }}
                             />
                         </div>
-
                         <div
                             className={`view-3 ${selectedImageIndex === 2 ? "stroke-selected" : ""}`}
                             onClick={() => handleImageClick(2)}
@@ -123,7 +117,6 @@ function CarDetailsPage({ favoriteCars, toggleFavorite, showFavorites, setShowFa
                         </div>
                     </div>
                 </div>
-
                 <div className="detailcar-container">
                     <div className="car-name-detail">
                         <h2 className="car-name-text-detail">{selectedCar.name}</h2>
@@ -136,14 +129,11 @@ function CarDetailsPage({ favoriteCars, toggleFavorite, showFavorites, setShowFa
                             </svg>
                         </div>
                     </div>
-
                     <p className="cardetailstextcontainer">{selectedCar.description}</p>
-
                     <div className="price-detail">
                         <div className="price-amount-detail">${selectedCar.price.toFixed(2)}</div>
                         <div className="price-subtext-detail">/ day</div>
                     </div>
-
                     <button className="rental-button-detail">
                         <span className="rental-text-detail">Rent Now</span>
                     </button>
