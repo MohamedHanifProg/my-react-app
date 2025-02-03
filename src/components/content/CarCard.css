@@ -140,11 +140,30 @@
   position: absolute;
   background-size: cover;
   background-position: center;
-  width: 272px;
-  height: 84px;
+
   top: 124px;
   left: 22px;
   z-index: 2;
+  flex-shrink: 0;
+}
+.car-image[data-car-id="1"],.car-image[data-car-id="10"] {
+  width: 272px;
+  height: 84px;
+  left: 18px;
+  top: 118px;
+}
+.car-image[data-car-id="2"],.car-image[data-car-id="11"] {
+  width: 228px;
+  height: 72px;
+  left: 18px;
+  top: 118px;
+  
+}
+.car-image[data-car-id="3"],.car-image[data-car-id="12"] {
+  width: 244px;
+  height: 76px;
+  left: 18px;
+  top: 118px;
 }
 
 .car-image[data-car-id="4"] {
