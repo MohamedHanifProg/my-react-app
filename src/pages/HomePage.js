@@ -7,17 +7,20 @@ function HomePage({ favoriteCars, toggleFavorite, showFavorites, setShowFavorite
   const minPrice = Math.min(...carsData.map((car) => car.price));
   const maxPrice = Math.max(...carsData.map((car) => car.price));
 
+  const allTypes = [...new Set(carsData.map((car) => car.type))]; 
+  const allCapacities = [...new Set(carsData.map((car) => car.capacity))];
+
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredCars, setFilteredCars] = useState(carsData);
   const [selectedFilters, setSelectedFilters] = useState({
-    types: [],
-    capacities: [],
-    priceRange: [minPrice, maxPrice],
+    types: allTypes,  
+    capacities: allCapacities,  
+    priceRange: [minPrice, maxPrice], 
   });
 
-  
   useEffect(() => {
     let result = [...carsData];
+
     if (searchQuery.length >= 2) {
       result = result.filter((car) =>
         car.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -61,4 +64,5 @@ function HomePage({ favoriteCars, toggleFavorite, showFavorites, setShowFavorite
     </Layout>
   );
 }
+
 export default HomePage;

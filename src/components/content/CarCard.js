@@ -37,17 +37,19 @@ function CarCard({ car, onToggleFavorite }) {
       </div>
 
 
-      <div className="car-image"
-     onClick={(e) => {
-       e.stopPropagation(); // Prevents event conflicts
-       navigate(`/car/${car.id}`);
-     }}
-     style={{
-       backgroundImage: `url(${car?.images[0]})`,
-       backgroundSize: "cover",
-       backgroundPosition: "center",
-       cursor: "pointer"
-     }}
+      <div
+  className="car-image"
+  data-car-id={car.id} // Ensure the attribute is correctly set
+  onClick={(e) => {
+    e.stopPropagation();
+    navigate(`/car/${car.id}`);
+  }}
+  style={{
+    backgroundImage: `url(${car?.images[0]})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    cursor: "pointer",
+  }}
 ></div>
 
 

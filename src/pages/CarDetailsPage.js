@@ -25,7 +25,7 @@ function CarDetailsPage({ favoriteCars, toggleFavorite, showFavorites, setShowFa
             console.error(`Car with ID ${carId} not found`);
             setSelectedCar(null);
         }
-    }, [id, favoriteCars]); // Removed showFavorites and navigate dependencies
+    }, [id, favoriteCars]); 
     
     const toggleFavoriteStatus = () => {
         toggleFavorite(selectedCar.id);

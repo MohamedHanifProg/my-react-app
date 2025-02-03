@@ -8,7 +8,7 @@ function FavoriteCarsPage({ favoriteCars, toggleFavorite }) {
       <h1 className="page-title">Favorite Cars</h1>
       {favoriteCars.size > 0 ? (
         <CarsCatalogue
-          cars={[...favoriteCars]} // Convert Set to array of full car objects
+          cars={[...favoriteCars]} 
           onToggleFavorite={toggleFavorite}
         />
       ) : (
